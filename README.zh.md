@@ -267,7 +267,7 @@
 ```bibtex
 @misc{surveys2026,
   title        = {AI Security Surveys: LLM, Generative Vision, Embodied Loops, and World Models},
-  author       = {Mingjun Cheng},
+  author       = {程明骏},
   year         = {2026},
   version      = {v0.2.0},
   howpublished = {\url{https://github.com/ManfredCh/ai-security-surveys}},
@@ -276,7 +276,7 @@
 ```
 
 若只引用其中一篇，请用它自己的标题，并以 `release/zh/<篇名>.md` 作为定位。引用元数据见
-[CITATION.cff](CITATION.cff)，作者为 `Mingjun Cheng`（程明骏，Vorynel Co.td）。
+[CITATION.cff](CITATION.cff)，作者为程明骏（奇异宇宙）。
 
 ## 参与贡献
 

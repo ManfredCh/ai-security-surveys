@@ -293,7 +293,7 @@ condition holds, the survey should withdraw or downgrade the original judgement.
 
 If you cite one survey rather than the collection, use its own title and add the section
 (`release/en/<survey>.md`) as the locator. CFF metadata is in [CITATION.cff](CITATION.cff).
-The author field is filled in: `Mingjun Cheng` (Vorynel Co.td), matching the PDF title page.
+The author field is filled in: `Mingjun Cheng` (Vorynel Co.,Ltd), matching the PDF title page.
 
 ## Contributing
 
