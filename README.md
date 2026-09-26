@@ -283,7 +283,7 @@ condition holds, the survey should withdraw or downgrade the original judgement.
 ```bibtex
 @misc{surveys2026,
   title        = {AI Security Surveys: LLM, Generative Vision, Embodied Loops, and World Models},
-  author       = {ManfredCh},
+  author       = {Mingjun Cheng},
   year         = {2026},
   version      = {v0.2.0},
   howpublished = {\url{https://github.com/ManfredCh/ai-security-surveys}},
@@ -293,7 +293,7 @@ condition holds, the survey should withdraw or downgrade the original judgement.
 
 If you cite one survey rather than the collection, use its own title and add the section
 (`release/en/<survey>.md`) as the locator. CFF metadata is in [CITATION.cff](CITATION.cff).
-**Replace the `author` field before publishing.**
+The author field is filled in: `Mingjun Cheng` (Vorynel Co.td), matching the PDF title page.
 
 ## Contributing
 
