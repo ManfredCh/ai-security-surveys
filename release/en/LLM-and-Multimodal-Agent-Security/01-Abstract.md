@@ -1,0 +1,7 @@
+## Abstract
+
+Large language model security has grown from single-turn content violations into a system problem. The model, retrieval, memory, tools, identity, network and execution environment jointly constitute it. This survey's sole primary classification axis is the location of the end-to-end trust boundary crossed by attack impact. Along that axis the survey synthesizes text jailbreaking, indirect prompt injection, RAG and long-term memory poisoning, VLM multimodal injection, Agent/Harness hijacking, and sandbox and supply chain risks. The evidence layer holds 65 attack paper records, 62 defense and engineering sources, 32 event records and 34 study-level quantitative effects. A statistical audit finds usable event counts and denominators for only five studies, at five different endpoints, so formal meta-analytic pooling groups number zero. The survey also reports 24 text Harness invocations, 18 local sandbox capability probes, and one nine-cell VLM failure run with no valid model answers. Model alignment can reduce the probability of dangerous intent. The synthesis shows, however, that high-privilege systems must place provenance, least capability, action-level authorization, memory identity, network egress, short-lived secrets, disposable execution and incident response outside the model. No overall breach rate is estimated here. Nor are synthetic reproductions or run timeouts extrapolated into production safety.
+
+---
+
+[← Back to contents](index.md)

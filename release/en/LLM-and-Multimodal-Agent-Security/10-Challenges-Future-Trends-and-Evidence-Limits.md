@@ -1,0 +1,69 @@
+## Challenges, Future Trends, and Evidence Limits
+
+This chapter derives its research agenda only from the coverage exceptions, failed runs, statistical non-poolability, and real-world incidents presented earlier. Each trend judgment is given together with its mechanism, observable signals, and uncertainty.
+
+### How Trend Analysis Avoids "Prediction by Gut Feeling"
+
+This survey does not write future trends as a product release list. It judges direction from four observable drivers. First, does research and incident evidence appear continuously? Second, does system adoption expand new reachability, permissions, and persistence? Third, does the unit cost of attack decline through automation, parallelism, and feedback? Fourth, can defense be enforced by independent components rather than continuing to rely on model self-discipline? In research-level correlations, the positive "year—agentic" correlation supports only a shift in research topics. It cannot prove that real-world risk grows with the year. Each item below is therefore given together with its mechanism, observable signals, and uncertainty.
+
+### In the Next Two Years the Main Axis Will Shift from Generated Content to Long-Horizon Action Chains
+
+One high-confidence near-term trend concerns what safety evaluation measures. It shifts away from "whether a single-turn answer violates policy" and toward "whether an agent can, within hours, find an entry point, maintain state, call tools, and expand permissions". PAIR, GPTFuzzer, and others have already automated prompt attacks. AgentDojo, InjecAgent, and others push the endpoint forward to tool actions. The 2026 OpenAI—HF incident shows that a cybersecurity agent whose refusals were lowered for evaluation could continuously produce about 17,600 actions. It could iterate across complex agents, third-party harnesses, cloud identities, and internal networks. Growth in attack capability need not appear as a single higher ASR. What matters more is the declining cost of each effective feedback, automatic switching to another route after failure, and holding context over long periods.
+
+Observable signals will include rising tool steps per task and a growing number of parallel agents. Automatic credential discovery and permission-graph search will enter general-purpose harnesses. Safety evaluation will begin to report time-to-compromise, steps before the first dangerous action, total cost, and points of human intervention. The defensive focus will shift from end-point text filtering toward action-level budgets, staged authorization, revocable identities, and long-trajectory anomaly detection. The uncertainty here is that closed-source models and infrastructure change rapidly. The attack chain of a single incident cannot be extrapolated directly into a general success rate.
+
+### Multimodal Risk Will Move from "Text Hidden in Images" into Persistent Environment State
+
+FigStep, HADES, SpeechGuard, and GUI injection have already shown that image layout, visual representation, audio waveforms, and interface elements can reach a model. Each can arrive through a different parser. The risk at the next stage is not that these attacks simply merge into a "multimodal ASR". It is that vision, audio, video, OCR, ASR, DOM, and action history jointly form a persistent state. An instruction may be incomplete in a single frame, yet change behavior once it is combined across frames or modalities. Real VLA/robots also bring erroneous clicks, movement, and physical contact into irreversible consequences.
+
+Observable signals are benchmarks shifting from static question answering to timestamped trajectories, region-level provenance, screenshots before and after actions, and physical constraints. Defense will then require multi-parser consistency, preservation of the raw modalities, provenance propagating with summaries, and out-of-model safety constraints such as speed, space, collision, and emergency stop. Current public evidence is still biased toward static images. This survey's local VLM reproduction in turn produced no valid answers, because 9/9 timed out. The quantitative trend for audio-video and embodied systems can therefore only be marked as medium confidence, and FigStep's numbers cannot be used in its place.
+
+### Memory Will Be Treated as a Security Database, Not a Longer Context
+
+AgentPoison, MINJA, A-MemGuard, and subsequent memory attacks extend a single input into a three-stage chain of write, recall, and action. Personal assistants and enterprise agents store more preferences, summaries, tool results, and user profiles. As they do, memory systems will simultaneously face provenance forgery, cross-tenant confusion, dormant triggering, compositional contamination, incomplete deletion, and backup resurrection. A model "feeling that this memory is trustworthy" will not become reliable control. Tenant, principal, purpose, integrity, confidentiality, TTL, version, derivation chain, and tombstone will become minimum requirements, like a database schema.
+
+Observable signals are papers and products reporting the write success rate, future top-k recall rate, conditional action rate, and survival time separately. They report cross-tenant leakage and verifiable deletion the same way, rather than giving only the final ASR. The sign of defense maturity is likewise not one more memory classifier. It is identity filtering executed before vector retrieval, trust escalation requiring external evidence, derived summaries inheriting provenance, and recovery processes replaying deletion markers. This direction has a high system-adoption driver, but long-term real-world reproduction remains scarce. Its specific defense effects fall into the low-to-medium certainty range.
+
+### Harness Will Become the Trusted Computing Base and the Primary Audit Object
+
+The stronger the model, the less the harness can be mere string concatenation and function forwarding. Task decomposition, tool registration, schema, parameter normalization, authorization, retry, memory writes, secret issuance, network, and logs all converge there. Any design in which "the model judges for itself whether it is safe" will create an authorization-layer mismatch. Future high-risk systems will treat model output as a candidate plan with provenance. A small, auditable policy kernel will then decide whether to execute it, according to the user, task, resource, data labels, and consequences.
+
+The technical path will move toward capability types and information-flow labels. It will also take up policy as code, two-phase commit, approval bound by parameter hashes, and formal invariants. The genuinely verifiable properties are not "the model will never be injected". They are "a low-integrity web page cannot directly determine high-impact tool parameters", "user B's data cannot flow into user A's answer", and "an unapproved recipient cannot receive anything outbound". CaMeL, FIDES, Task Shield, and MCP security practices provide early forms, but adapters and label loss remain part of the trusted computing base. A formal model has engineering meaning only if it covers real tools and side effects.
+
+### Sandboxes Will Shift Toward Disposable Execution Units and External Capability Brokers
+
+Containers, WASM, gVisor, and microVM will not have all scenarios replaced by a single winner. The trend is to choose the minimal semantics the workload requires. Pure extraction avoids a general-purpose executor where possible. Small plugins use WASM with explicitly imported capabilities. Native untrusted code enters a short-lived per-task VM. Network, secrets, and cloud identity are then issued temporarily by a broker outside the sandbox, once the action passes policy. Execution isolation, network isolation, secret isolation, and resource isolation are not equivalent to one another. Any covert egress will break the overall boundary.
+
+Observable signals will be security documentation changing from "runs in a sandbox" into versioned allow/deny matrices. That documentation will cover kernel or VMM boundaries, egress policy, IMDS blocking, credential lifetime, proof of destruction, and recovery time. The HF incident in particular will drive threat modeling of package proxies, third-party code harnesses, shared infrastructure, and internal networks. Zero-days still cannot be eliminated. Short-lived units, no long-term secrets, default-deny egress, and rapid rebuilding are therefore more testable than claiming "absolutely no escape".
+
+### Supply Chain Objects Will Expand from Weights to the Entire Set of Agent Artifacts
+
+The future model bill of materials will cover several artifact classes at once. These include weights, adapters, tokenizers, processors, chat templates, system prompts, tool descriptions, MCP servers, policies, containers, GPU extensions, and evaluation harnesses. A malicious pickle is only one kind of entry point. Safe tensors may also carry backdoor behavior, and trusted weights may also be paired with malicious tool descriptions or overly broad policies. The 2025 PyTorch weights_only vulnerability, the unauthorized Cline npm release, and the 2026 HF incident together show a pattern. AI supply chain risk is often traditional signing, CI/CD, credentials, and release permissions superimposed on model control flow.
+
+Observable signals are organizations pinning the version and digest of the complete execution graph, and generating provenance for training, conversion, quantization, evaluation, and packaging. Production no longer follows a floating latest. Artifacts that pass a behavior gate are re-signed before entering an internal read-only registry. Models, tools, policies, and credentials become jointly revocable. The misunderstanding most to be avoided here concerns safetensors, a signature, or an SBOM. None of them alone is a behavioral safety certificate.
+
+### Evaluation Will Shift from ASR Rankings to Conditional Risk Chains and the Safety—Utility—Cost Frontier
+
+No single ASR can answer where the dangerous impact is cut off. A more explanatory end-to-end incident chain can be written as:
+
+$$
+P(H)=P(R) P(C| R) P(I| C,R) P(A| I,C,R) P(H| A,I,C,R),
+$$
+
+Here R denotes a reachable attack input and C a controlled task or state. I denotes that dangerous intent is produced. A denotes that the executor authorizes and executes, and H that actual harm is produced. This expression is chain-rule accounting written with conditional probability. It does not require the stages to be independent. Its value lies in showing which term a defense actually changes. Observing only a final harm of zero leaves four possibilities: the input never arrived, the model was not triggered, the capability gate refused, or the experiment had no valid response at all. Those four causes cannot be conflated as "safe".
+
+Future high-quality benchmarks should publish stage counts, benign tasks, false refusals, token/latency/human/cost, attack budget, and model and harness versions. They should also provide paired transitions of the same prompt before and after a defense. The meta-analytic audit for this survey yielded zero poolable groups. That result indicates precisely that common reporting today is still insufficient to estimate the average true effect. Random effects, prediction intervals, and causal stratification will only become more meaningful than a descriptive map once independent repetitions gradually appear across multiple organizations, models, and identical endpoints.
+
+### Which Popular Narratives Should Not Be Taken as Trend Conclusions
+
+Neither "Smarter models are naturally safer" nor "stronger models are certainly more dangerous" has monotonic evidence. Capability, alignment, tool permissions, and deployment boundaries all change at the same time. The so-called "end of general jailbreaking" usually holds only under a fixed policy, a fixed model version, and a fixed attack budget. Adaptive retesting may rewrite the result. The so-called "fully automated AI defending against AI" is merely a loop of correlated failures when models of the same kind generate, execute, score, and approve together. A more credible direction gives models discovery, explanation, and candidate planning, while independent identity, policy, information flow, execution isolation, and human accountability carry the final authorization.
+
+### Evidence Limitations of This Survey
+
+Search candidates were deduplicated, and the raw API responses are kept. Still missing is a completed PRISMA log recording per-item title, abstract, and full-text exclusion decisions for the 1,854 candidates. This survey therefore does not claim to exhaust all papers. The attack, defense, and incident base tables count in different units, so they cannot be added together into a total paper count. The evidence-level statistics may still change if backfilling of the formal version continues. Most papers lack direct event counts, paired transitions, independent reproduction, and production side effects. Formal meta-analytic pooling therefore yields zero groups. The correlation is an exploration over 34 selected studies. It does not represent the real-world incident distribution or causal effects.
+
+Two local experiments verified mechanisms. The text Harness runs under a six-scenario single seed and does not execute real side effects. The macOS sandbox experiment relies on the deprecated sandbox-exec, and no escape testing was performed in it. The VLM experiment produced no valid responses. Only run timeouts can be reported. Technical retrospectives from both sides of the 2026 OpenAI—HF incident have supplied many facts. OpenAI's more complete technical report had still not been published as of the cutoff date, and some attribution and control details may continue to be updated.
+
+---
+
+[← Back to contents](index.md)
