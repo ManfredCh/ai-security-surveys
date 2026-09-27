@@ -11,7 +11,7 @@ For the anchor papers, this survey answers eight questions uniformly. What asset
 Case A: Why GCG can search out a gibberish suffix. The input is an aligned model f_theta, a set of harmful target requests, a modifiable discrete suffix token and a target beginning. The internal state is the gradient of the target loss at each suffix position. The algorithm does not directly publish an answer on continuous vectors. Instead, it uses the gradient to shortlist a few candidate tokens at each position, then replaces them one by one and uses the true forward loss to select the candidate with the largest decrease, looping until the budget is exhausted. The output is a suffix. Scoring usually looks at both the target prefix and the final content. The underlying logic is that safety training constrains the common semantic distribution, yet it does not make all discrete token combinations satisfy the same refusal boundary. Reproduction must freeze the tokenizer, chat template, target prefix and number of steps, otherwise “GCG with the same name” is not the same experiment. Looking only at affirmative beginnings will overestimate harmful completion.
 
 **Text structure representation in the old draft**
-\begin{verbatim}
+```
 Request u + learnable suffix s
 v Target loss L(ftheta(u||s), target)
 Compute the gradient at each position of s to produce top-k token candidates
@@ -19,12 +19,12 @@ v Score each candidate with the true forward pass
 Accept the best replacement, repeat for B steps
 v
 Candidate suffix + full answer from the target model + independent/manual scoring
-\end{verbatim}
+```
 
 Case B: Why CaMeL/FIDES is not “adding one more guard model”. The input is divided into an immutable user goal U and untrusted external data D. A privileged planner sees only U and produces a restricted plan. A tool-free parser converts D into typed values. The runtime maintains the provenance, integrity, confidentiality and permitted recipients of values. The output is not a shell that the model executes directly. It is actions that the interpreter passes one by one after they satisfy the capability and information-flow policies. Security comes from “D cannot create new control flow, and low-integrity or high-confidentiality values cannot enter sinks that are not permitted”, not from the parsing model always being correct. In CaMeL's Gemini-2.5-Pro configuration, the successful attack count goes from 300/949 to 0/949, but normal task completion drops from 73.2% to 41.2%, and the median input/output tokens are about 2.73×/2.82×. The conclusion must therefore include blocking, utility and cost at the same time, and it cannot state only “0 attacks”.
 
 **Text structure representation in the old draft**
-\begin{verbatim}
+```
 Trusted user goal U --> privileged planner --> restricted plan/capability ceiling
 Untrusted data D --> tool-free parser --> labeled structured values
 The two paths meet at the reference monitor
@@ -32,7 +32,7 @@ v
 policy allow / deny / ask / redact
 v
 Tool adapters produce real side effects
-\end{verbatim}
+```
 
 Case C: Why memory attacks need at least three endpoints. AgentPoison assumes that the attacker can write a small number of optimized records into the knowledge/memory store. MINJA narrows the entry point to an ordinary conversation triggering automatic saving. Neither attack is “successful on a single input”. Success instead runs along a chain: write success W → future recall R → dangerous action A. When a paper reports only the final ASR, a reader cannot tell whether a defense blocks the write, reduces top-k hits, or rejects at the action gate. A more reasonable record therefore carries P(W), P(R| W), P(A| R,W), survival time, cross-tenant leakage, and clean-task change. End-to-end risk can be conceptualized as the product of the three conditional probabilities. Actual multiplication, however, is permitted only with staged counts from the same traced sample. Nor do ten memories that are provenance-related count as ten independent pieces of evidence.
 
@@ -42,7 +42,7 @@ Case D: How to read the numbers of FigStep/AdaShield. FigStep renders the harmfu
 
 Three different statistical units run through this project: 65 attack-paper records, 62 defense/engineering sources, and 32 incident/vulnerability records. They cannot be added into “159 papers”. The defense table contains specifications and official documentation, so it is not a set of papers. The unit of the incident table is also not a paper. And the three tables may cite the same source. So the figure below reports three things in separate panels: evidence level, year, and non-mutually-exclusive modality labels.
 
-Figure \ref{fig:evidence-map} shows the heterogeneous evidence map of attack papers, defense sources, and incident records.
+Figure fig:evidence-map shows the heterogeneous evidence map of attack papers, defense sources, and incident records.
 
 ![Evidence map. Attack papers, defense and engineering sources, and event records use different units of analysis and cannot be added into a single total number of papers.](../../figures/en/evidence-map.png)
 
@@ -54,7 +54,7 @@ Automated retrieval is also not the same as final inclusion. The 2,400 records a
 
 Every computable effect first answers five questions. Is the success endpoint explicit? Are there direct event counts and denominators? Can the attack entry point, attacker knowledge, model task, policy, and sampling unit be mapped? Does the same paper contribute only one pre-declared main arm? And are there at least three independent studies? If any step fails, the analysis falls back to descriptive synthesis or single-study presentation. It does not continue to apply statistical formulas. The judgments in full, and the actual number of dropouts in this round, are plotted below.
 
-Figure \ref{fig:meta-composability} shows the poolability audit, from 34 studies to zero formal pooled groups.
+Figure fig:meta-composability shows the poolability audit, from 34 studies to zero formal pooled groups.
 
 ![Meta-analytic poolability audit. The five studies that pass the numerical contract fall into five different endpoints, all groups are single studies, and therefore there are zero formal pooled groups.](../../figures/en/meta-composability.png)
 
@@ -182,7 +182,7 @@ For ASR and evidence tier it is n=19, rho=-0.438. The bootstrap interval -0.761�
 
 The unified table does not contain enough auditable defense_layers codings, and none of the selected primary effects has an independent reproduction under the same definition. No "layers–effect" or "reproduction–effect" correlation was therefore manufactured from subjective impressions. The correlation results are more like a map of research topics than a causal model. The complete results for all 20 pairs appear in the correlation analysis report.
 
-Figure \ref{fig:correlation-results} shows the exploratory study-level Spearman, bootstrap and permutation test results.
+Figure fig:correlation-results shows the exploratory study-level Spearman, bootstrap and permutation test results.
 
 ![Study-level exploratory correlations. The intervals and permutation tests are used to describe the landscape of the sampled literature and do not support causal inference about deployment.](../../figures/en/correlation-results.png)
 

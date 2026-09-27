@@ -4,7 +4,7 @@
 
 **四篇证据综述：LLM 与智能体、图像与视频生成、具身闭环、世界模型。**
 
-<sub>4 篇 · 21 万汉字 · 221 页 PDF · 附英文译本</sub>
+<sub>4 篇 · 21 万汉字 · 198 页 PDF · 附英文译本</sub>
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  ·  [![Status](https://img.shields.io/badge/Status-compiled_draft-orange)](#状态与边界)  ·  [![Language](https://img.shields.io/badge/Language-English_%7C_%E4%B8%AD%E6%96%87-blue)](#语言与版本)  ·  [![图谱](https://img.shields.io/badge/%E5%9B%BE%E8%B0%B1-97_%E7%AF%87-informational)](release/zh/图谱_97篇索引.md)
 
@@ -60,7 +60,7 @@
 
 | Language | README | Documents |
 |---|---|---|
-| **简体中文** | 本文件 | 四篇中文原稿 + 图谱索引，21 万汉字，221 页 PDF |
+| **简体中文** | 本文件 | 四篇中文原稿 + 图谱索引，21 万汉字，198 页 PDF |
 | **English** | [README.md](README.md) | four surveys, 160k words, 335 pages of PDF |
 
 
@@ -88,7 +88,7 @@
 | | |
 |---|---|
 | 中文 | [从模型越狱到系统隔离.md](release/zh/从模型越狱到系统隔离/index.md) · [34 页](release/zh/从模型越狱到系统隔离.pdf) |
-| English | [LLM-and-Multimodal-Agent-Security.md](release/en/LLM-and-Multimodal-Agent-Security/index.md) · [51 页](release/en/LLM-and-Multimodal-Agent-Security.pdf) |
+| English | [LLM-and-Multimodal-Agent-Security.md](release/en/LLM-and-Multimodal-Agent-Security/index.md) · [52 页](release/en/LLM-and-Multimodal-Agent-Security.pdf) |
 | 篇幅 | 约 2 小时 · 11 章 |
 | 结构 | 语料与编码方法 → 背景与输入输出合同 → 分类设计与覆盖审计 → 防御方法家族 → 跨家族综合 → 数据指标与评价证据 → 事件复现与部署映射 → 挑战与证据限制 |
 
@@ -120,8 +120,8 @@
 
 | | |
 |---|---|
-| 中文 | [从首破接口到纵深防御.md](release/zh/从首破接口到纵深防御/index.md) · [128 页](release/zh/从首破接口到纵深防御.pdf) |
-| English | [Image-and-Video-Generation-Security.md](release/en/Image-and-Video-Generation-Security/index.md) · [206 页](release/en/Image-and-Video-Generation-Security.pdf) |
+| 中文 | [从首破接口到纵深防御.md](release/zh/从首破接口到纵深防御/index.md) · [105 页](release/zh/从首破接口到纵深防御.pdf) |
+| English | [Image-and-Video-Generation-Security.md](release/en/Image-and-Video-Generation-Security/index.md) · [183 页](release/en/Image-and-Video-Generation-Security.pdf) |
 | 篇幅 | 约 7 小时 · 12 章 + 4 附录 |
 | 结构 | 证据治理 → 系统边界与威胁模型 → I1–I7 分类 → 镜像证据综合 → 跨接口纵深防御 → 视频专项 → 工程检验 → 部署决策 → 局限与双用途 → 可证伪议程；附录含 27 项论文深析与 32 张事件卡 |
 

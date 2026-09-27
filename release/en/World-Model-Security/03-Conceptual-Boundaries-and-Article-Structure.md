@@ -12,7 +12,7 @@ A name alone cannot settle terminology. This survey defines a world model as a s
 *The minimum verifiable contracts for the four model classes; they can overlap and are not mutually exclusive brand labels.*
 
 ```text
-\hat{s}_{t+1},\hat{o}_{t+1},\hat{r}_{t+1}=F_{\theta}(s_t,a_t,c_t),a_t=\pi(s_t,\hat{s}_{t+1:t+H},g_t)
+\hat{s}_{t+1},\hat{o}_{t+1},\hat{r}_{t+1}=F_{\theta}(s_t,a_t,c_t),a_t=\pi$s_t,\hat{s}_{t+1:t+H},g_t$
 ```
 
 *Unified functional contract: the coupling of the predictor with the action/controller.*

@@ -2,21 +2,13 @@
 
 ### 12.1 Boundary Answers to the Central Question and the Four RQs
 
-<!-- new_id=A-V2-12-001 origins=L00640,L00641 evidence=LF-A001-LF-A042;LF-D043-LF-D095;LF-R201-LF-R205 action=merge -->
-
 The shortest answer to the central question runs as follows. Image and video generation safety requires first locating the security contract that fails earliest in the end-to-end chain. Only then does it become possible to choose the earliest interruption point, guided by permission, modality, budget, sampling unit, and evidence layer. The same harmful output does not license the inference of the same attack. RQ1 is answered by the joint encoding of assets, principals, capabilities, first-broken interfaces, and consequence evidence. RQ2 is answered by mechanism, propagation, cost, benign utility, and failure conditions measured under the same interface and the same protocol. It does not produce a unified cross-protocol ranking.
-
-<!-- new_id=A-V2-12-002 origins=L00641,L00642 evidence=LF-A001-LF-A042;LF-D043-LF-D095;LF-R201-LF-R205 action=merge -->
 
 The boundary conclusion for RQ3 is that a defense must mirror the corresponding first-broken interface. It must also disclose its root of trust, benign utility, adaptive bypass, remediation responsibility, and residual propagation. That supports only conditional combinations. The boundary conclusion for RQ4 is that papers, code, system cards, standards, regulations, incidents, and local experiments can each answer only their own questions. Those questions are mechanistic, implementation, claim, obligation, real-world chain, or engineering. They cannot be upgraded into one another. The conclusion of this survey is therefore an evidence-constrained layered synthesis, not a causal proof of attack or defense effectiveness.
 
 ### 12.2 Practical Implications, Non-Claims, and Minimum Follow-Up Validation
 
-<!-- new_id=A-V2-12-003 origins=L00643 evidence=LF-A001-LF-A042;LF-D043-LF-D095;LF-R201-LF-R205 action=rewrite -->
-
 The practical implication is to connect traceability and defense in depth into a replayable chain of responsibility. Upstream records provenance, authorization, and artifact integrity. The training and conditioning layers constrain dangerous capabilities while preserving benign utility. The inference layer isolates tenants, queries, and resources. The output layer treats detection, watermarking, and provenance credentials as non-interchangeable signals. The platform layer converts signals into timely, revocable, and appealable actions. High-risk business operations still use independent identity verification and privilege separation. Minimum follow-up validation should prioritize validating the earliest interruption point, benign utility, adaptive bypass, preservation of the production-equivalent chain, and revocation and appeals. When pre-registered falsification conditions hold, it should narrow its conclusions.
-
-<!-- new_id=A-V2-12-004 origins=L00640,L00641,L00642,L00645 evidence=LF-A001-LF-A042;LF-D043-LF-D095;LF-R201-LF-R205 action=merge -->
 
 This draft does not claim to exhaust the literature or to have completed a strict PRISMA systematic review. It does not claim that a poolable overall effect exists, that a single optimal defense exists, or that a real-world attack incidence rate exists. Nor does it count local experiments, static audits, or compilability as a successful reproduction of a paper's main protocol. The statistical status is `NOT_RUN_MISSING_VARIANCE_AND_INDEPENDENCE`, and the end-to-end reproduction status is `end_to_end_runs=0`. These boundaries mean that this survey supports only the conditional synthesis and falsifiable next steps described above. They do not constitute a guarantee of production effectiveness, legal advice, or an inevitable future trend.
 
@@ -24,24 +16,18 @@ This draft does not claim to exhaust the literature or to have completed a stric
 
 #### 12.E1.1 Closed Answers to the Eight Research Questions
 
-<!-- new_id=M-L00640 origins=L00640 evidence=LF-R201-LF-R205 action=move -->
 First, image and video generation safety should be modeled in terms of end-to-end assets and trust boundaries, not merely by asking whether an output is a content violation. Second, the first-broken interface provides a stable main axis. Seven categories — data, supply chain, conditioning, training, inference, output, and distribution — can cover the current central corpus. Propagation paths and consequences are encoded separately. Third, differences in attack capability come from permission, knowledge, budget, persistence, and modality state. The same "harmful output" does not mean the same attack.
 
-<!-- new_id=M-L00641 origins=L00641 evidence=LF-R201-LF-R205 action=move -->
 Fourth, a defense is comparable only when it mirrors the first-broken interface. It must also report trust assumptions, benign utility, adaptive bypass, and remediation responsibility. Fifth, existing metrics and protocols are highly heterogeneous. In particular, the frame, clip, video, and identity denominators of video cannot be interchanged. This survey therefore rejects cross-paper overall rankings and meta-analysis. Sixth, papers, code, system cards, standards, regulations, incidents, and experiments must be layered. They answer different questions and cannot be upgraded into one another.
 
-<!-- new_id=M-L00642 origins=L00642 evidence=LF-R201-LF-R205 action=move -->
 Seventh, local evidence supports only the local behavior of the DCT-QIM/HMAC toy experiment and the static engineering contracts of seven repositories. It cannot prove paper-level or production-deployment performance. Eighth, the highest-priority research questions concentrate on real-time/long video, joint audio-visual processing, compositional adapter supply chains, and generative service availability. They also cover provenance attestation lifecycles, low-base-rate detection, cross-platform remediation, and regulatory enforcement. These topics all require predefined data, baselines, metrics, and falsification conditions.
 
-<!-- new_id=M-L00643 origins=L00643 evidence=LF-R201-LF-R205 action=move -->
 This survey's most stable practical conclusion is not to "choose some safest model." It is to establish traceable defense in depth. Upstream controls provenance, authorization, and artifact integrity. The training and conditioning layers limit dangerous capabilities while preserving benign utility. The inference layer isolates tenants, queries, and resources. The output layer combines detection, watermarking, and provenance credentials without over-interpreting them. The platform layer turns signals into timely, revocable, and appealable enforcement. Real high-risk business operations still use independent identity verification and privilege separation.
 
 #### 12.E1.2 Data, Code, and Availability Statement
 
-<!-- new_id=M-L00644 origins=L00644 evidence=LF-R201-LF-R205 action=move -->
 The Ditse directory holds the retrieval protocol, OpenAlex queries and responses, the central source registry, paper full texts and the page-level index, paper cards, the attack-defense matrix, event cards, repository snapshots, experiment scripts and logs, and chart data. This round's build chain regenerates the LaTeX, the compilation logs, the full-page visual inspection, and the SHA-256 manifest. Whether they cover the current long version must be determined by this round's page count, timestamps, and hashes in `validation.json`, `validation/visual_qa.md`, and `validation/file_manifest.json`. It cannot be inferred from the existence of old files. Sources are subject to the original copyright and licenses. Local snapshots are used for audit and do not change the original authorization.
 
-<!-- new_id=M-L00645 origins=L00645 evidence=LF-R201-LF-R205 action=move -->
 This draft uses the generic template. Artifact status rests on this round's `validation.json` alone. The label `compiled-draft` applies only after the Markdown, `paper.json`, LaTeX, references, and all figures and tables have been rebuilt and the PDF has actually compiled. Full-page visual QA and hash acceptance must also have passed. Failure at any step should lead to a downgrade. Upgrading to a submission manuscript still requires selecting a target venue, using the current official template, and rechecking all bibliographic information and the image policy. It also requires updating time-sensitive sources, and human authors must still complete full-text, dual-use, and conflict-of-interest review. AI assistance is used for retrieval orchestration, structuring, initial drafting, and consistency checking. It does not replace the authors' responsibility for every technical, quantitative, and legal claim.
 
 ---

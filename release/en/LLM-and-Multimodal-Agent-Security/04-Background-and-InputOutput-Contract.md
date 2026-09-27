@@ -13,7 +13,7 @@ The first three layers can appear in model-only benchmarks. The fourth must inco
 The reference chain this survey adopts appears below.
 
 **Text structure representation in the earlier draft**
-\begin{verbatim}
+```
 Data/code/weights supply chain
 v
 Base model and alignment layer
@@ -29,7 +29,7 @@ v
 Short-term state, long-term memory, user profiles, and cross-agent messages
 v
 Sandbox, containers/VMs, host, cloud control plane, and downstream users
-\end{verbatim}
+```
 
 Any arrow may cross a trust domain. Security design does not ask "is the model clever". It answers a list of questions item by item. Who can write? Is provenance verifiable? What can the model see? What can the model suggest? What will the executor allow? How long can state be kept? How large is the blast radius after a failure?
 

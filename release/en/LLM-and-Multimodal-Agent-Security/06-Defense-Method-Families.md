@@ -44,7 +44,7 @@ Structured defenses move the trusted computing base from "the model will obey" t
 
 This class of controls demotes model output into a candidate plan. Five gates---tool registration, task, data flow, parameters, and consequences---decide whether to execute.
 
-Figure \ref{fig:text-harness-results} gives the per-configuration results of the local synthetic mechanism probe for the text harness.
+Figure fig:text-harness-results gives the per-configuration results of the local synthetic mechanism probe for the text harness.
 
 ![Text Harness synthetic reproduction. The capability gate did not eliminate dangerous intent, but it did stop dangerous actions from landing. The denominator holds only six synthetic scenarios, so the results serve mechanistic illustration rather than model ranking.](../../figures/en/text-harness-results.png)
 
@@ -138,7 +138,7 @@ Multimodal evidence must record human visibility, attack constraints, font/resol
 
 This class of controls sits at the execution and artifact boundary. It separately restricts the kernel, files, network, identity, secrets, resources, and the build-and-release path.
 
-The selection logic for execution isolation carriers and external capability controls appears in Figure \ref{fig:sandbox-capability-selection}.
+The selection logic for execution isolation carriers and external capability controls appears in Figure fig:sandbox-capability-selection.
 
 ![Selecting an isolation boundary by workload and required capabilities. Execution, network, secret, and resource restrictions are mutually independent, and the options in the figure are not absolute security levels.](../../figures/en/sandbox-capability-selection.png)
 

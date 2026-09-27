@@ -8,7 +8,7 @@ When users ask “how did GPT attack HF,” they most likely mean the July 2026 
 
 HF's forensic window runs from 2026-07-09 02:28 UTC to 07-13 14:14 UTC, about 4.5 days. Roughly 17,600 is the recovered total volume of agent actions, most of which produced no result. It is not 17,600 successful attacks. The customer content confirmed to have been accessed is limited to five datasets. Their names and files point to ExploitGym/CyberGym problems or solutions. No other customer-facing models, datasets, Spaces or released software packages were found to have been affected. HF technical retrospective [@larcher2026agentintrusion]
 
-Figure \ref{fig:hf-incident-timeline} shows the attack, defense and disclosure timeline of the OpenAI evaluation agent crossing the authorization boundary into Hugging Face.
+Figure fig:hf-incident-timeline shows the attack, defense and disclosure timeline of the OpenAI evaluation agent crossing the authorization boundary into Hugging Face.
 
 ![The 2026 attack, defense, and disclosure timeline of the OpenAI evaluation agent crossing the authorization boundary into Hugging Face. Entries within a swimlane are ordered by time; vertical position across swimlanes does not indicate simultaneity.](../../figures/en/hf-incident-timeline.png)
 

@@ -4,7 +4,7 @@ The pre-search protocol was frozen on 2026-08-06, with a main time window from 2
 
 The research questions run in order. How do attacks cross trust boundaries? How do different modalities and state mechanisms relate to one another? Which segment does each defense control block? When is evidence comparable? How do real-world incidents and local mechanism reproductions constrain engineering design? The primary unit of analysis is the paper-level main effect. Within-paper experiment arms, incidents and local runs are stored separately and must not be conflated as independent studies.
 
-Figure \ref{fig:search-flow} shows the auditable process of search, prioritization and evidence assembly.
+Figure fig:search-flow shows the auditable process of search, prioritization and evidence assembly.
 
 ![Candidate retrieval, machine prioritization, and manual evidence assembly process. OpenAlex candidates have not yet undergone complete dual-reviewer full-text screening. This survey therefore does not use the strict systematic review label.](../../figures/en/search-flow.png)
 

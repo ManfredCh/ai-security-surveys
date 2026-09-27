@@ -2,7 +2,7 @@
 
 The primary taxonomy axis answers only one question: which trust boundary does the attack impact cross in the end-to-end chain? Secondary labels cover entry vector, black-box or white-box access, transient or persistent state, content or action consequence and defense location. A single study may carry multiple labels. The top-level taxonomy, however, is no longer repeatedly rearranged by modality, attack name or product.
 
-Figure \ref{fig:unified-taxonomy} shows the single primary taxonomy axis used throughout this survey, together with the cross-cutting labels.
+Figure fig:unified-taxonomy shows the single primary taxonomy axis used throughout this survey, together with the cross-cutting labels.
 
 ![Unified taxonomy coordinates. The primary axis is the location of the end-to-end trust boundary that the attack impact crosses. Entry, attacker privilege, persistence, consequence and defense location serve only as secondary codes. The figure is redrawn from structured evidence of the earlier project.](../../figures/en/unified-taxonomy.png)
 

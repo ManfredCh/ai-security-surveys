@@ -2,51 +2,31 @@
 
 ### 8.1 Academic Papers and Official Code: Mechanisms, Implementation, and Unrun Boundaries
 
-<!-- new_id=A-V2-08-001 origins=L00328-L00447,L00524,L00536-L00539 evidence=LF-A001-LF-A036;LF-E096-LF-E130;LF-R203-LF-R204 action=merge -->
-
 A paper supports a specific threat model, a mechanism, the authors' own protocol results and the limitations they state. Official code can confirm more: entry points, configuration, dependencies and data contracts. It does not automatically confirm the paper's numbers. The cross-study synthesis in the V2 main text cites author reports or specification semantics only. The 27 unified in-depth analyses sit in the appendix as evidence cards. They do not restate the authors' tables as local results. Every one of the central 41 paper cards carries the status `NOT_ATTEMPTED`, with `paper_main_protocol_run=false`. So an official repository, a full text and a pinned commit show only that the paper's evidence identity is relatively traceable. That is not a reproduction of the main protocol.
-
-<!-- new_id=A-V2-08-002 origins=L00328-L00447,L00534-L00539 evidence=LF-E096-LF-E130;LF-R203-LF-R204 action=merge -->
 
 Cross-paper comparison is conditional. It is made only where attack privileges, modality, input, evaluation unit, budget and clean utility are compatible. BadDiffusion, SneakyPrompt, WAVES, T2VSafetyBench and others cover training backdoors, conditional jailbreaking, watermark stress testing and video safety benchmarks. Their metrics share no common denominator [@P001] [@P008] [@P030] [@P034]. A passing help entry point, source files that parse, or the existence of a license can support one thing only: the implementation is inspectable. Once weights, data, a dedicated environment, the authors' configuration and a complete run are missing, the analysis must stop at static audit. Where code and paper are inconsistent, record the version difference and lower the reproducibility claim. Do not select whichever side is more favorable.
 
 ### 8.2 System Cards, Standards, Products, and Regulations: Claims and Obligations
 
-<!-- new_id=A-V2-08-003 origins=L00278-L00287,L00303-L00305,L00322-L00325,L00487-L00491,L00506-L00512 evidence=LF-A037-LF-A042;LF-D059-LF-D064;LF-D075-LF-D095 action=merge -->
-
 A system card, a product help page or a vendor announcement can establish what claims an organization made on a specific date about a version, a capability, a mitigation or a lifecycle. None of them replaces a third-party attack evaluation. Standards primarily define representable objects, verification states and interoperability requirements. Regulations and judicial texts define obligations, procedures and times of applicability. They do not measure algorithmic effects. C2PA 2.4 can support the specification semantics of provenance claims and binding. The Sora 2 system card can support a vendor's self-reported product safety position. The official EU and Chinese texts can support transparency or labeling obligations [@O001] [@R-A035] [@O006] [@O009]. Conclusions drawn from these four kinds of material must not be upgraded into one another.
-
-<!-- new_id=A-V2-08-004 origins=L00322-L00325,L00487-L00495,L00505-L00513 evidence=LF-D075-LF-D095;LF-E136-LF-E161;LF-E193-LF-E194 action=merge -->
 
 Suspending a product, restoring it, retiring it or adding a label is an observable organizational action. Its cause can be attributed only where the source states that cause explicitly. A service going offline also does not equal the disappearance of open weights. Standards compliance, inclusion in a trust list or a platform reading a credential can raise protocol usability. They do not prove that every implementation preserves it across platforms, nor that users understand it correctly. A regulation's entry into force can serve as a date fact for a deployment gate. Enforcement coverage, false positives, appeals and real-world harm reduction still require incident or platform data. This survey therefore lists `VENDOR_CLAIM`, specification semantics, legal obligations and incident outcomes separately. Any cross-layer inference is marked as “this survey's synthesis” together with its conditions.
 
 ### 8.3 Causal Chains and Unknown Fields of the 32 Incidents
 
-<!-- new_id=A-V2-08-005 origins=L00477-L00486,L00492-L00504 evidence=LF-E134-LF-E173;LF-E177-LF-E187;LF-E195-LF-E197 action=merge -->
-
 The 32 event cards are a purposive sample of news, official, judicial, product and policy items. They are not a sampling of incidence rates. Each card is counted only once. It records, in sequence, whether generation or editing is confirmed, how the material entered dissemination or a business process, observable consequences, independent real-world harm, and official or platform responses. Incident occurrence dates are kept separate from evidence publication dates. The government reply on the Hong Kong deepfake conference scam can confirm specific transfer losses. Platform announcements can confirm takedown actions. Criminal materials can distinguish charges, guilty pleas, rulings and seizures [@O048] [@O049] [@O055] [@O056]. None of these facts can support an inference about a generator's overall attack rate or algorithmic causal effect.
-
-<!-- new_id=A-V2-08-006 origins=L00477-L00518 evidence=LF-E134-LF-E187;LF-E193-LF-E197 action=merge -->
 
 Several fields generally go unknown in these incidents. They include the generator and version, whether generation was real-time, the attack budget, the initial accounts, complete cross-platform dissemination, the victim denominator, label false positives and false negatives, appeals, and long-term consequences. Vendor and platform self-reports are suited to establishing their own claims or actions. High-reputation media, absent first-hand case files, provide only limited corroboration. Regulatory, judicial and government records are likewise stronger only within the scope of the corresponding proceedings. The figure of 32 here, the topic-cluster distribution and the reporting density do not indicate a temporal trend. Incidents serve the synthesis in one way only. They test whether paper mechanisms have chains that are realistically reachable. They show which organizational controls actually appear. They mark the unknown field at which attribution must stop.
 
 ### 8.4 Local PARTIAL_RUN and STATIC_AUDIT_ONLY for Seven Repositories
 
-<!-- new_id=A-V2-08-007 origins=L00524-L00535 evidence=LF-D073;LF-R203-LF-R204 action=merge -->
-
 The local authenticity experiment uses 6 programmatically synthesized images, 48 source frames and silent video. It compares exact SHA/HMAC, volatile container metadata and a global DCT-QIM toy signal. Its status is strictly `PARTIAL_RUN` [@DitseReproduction2026]. It did not use the paper's model weights. It did not reproduce Stable Signature, Tree-Ring, VideoSeal or C2PA. It did not cover production keys, public verification, cross-platform uploads or victim handling. The local numbers show one thing only. Under this fixed set of synthetic inputs and preregistered processing, the three classes of signal have different failure surfaces. Those numbers cannot yield a product robustness rate, a confidence interval or a ranking of papers.
-
-<!-- new_id=A-V2-08-008 origins=L00532-L00539 evidence=LF-D065-LF-D073;LF-D081-LF-D082;LF-R204 action=merge -->
 
 For the seven public repositories, only read-only checks of entry points, configuration, dependencies, licenses, commits and data/weight contracts were completed. All carry the status `STATIC_AUDIT_ONLY`. Large weights and data were not downloaded. The paper-specified environment and main configuration were not run, hence `end_to_end_runs=0`. The frame-by-frame results of the local video experiment likewise support only frame-level propositions. They cannot substitute for VideoSeal's learned temporal propagation or a platform's first-alert evaluation [@P033]. A passing static audit means the current snapshot can be inspected, not that the authors' metrics hold. Even if only imports, help commands or single-sample visualization are completed in the future, the status cannot automatically be upgraded to a paper reproduction.
 
 ### 8.5 Agreement, Conflict, and Stopping Rules for Multi-Source Evidence
 
-<!-- new_id=A-V2-08-009 origins=L00477-L00518,L00524-L00539 evidence=LF-E096-LF-E200;LF-R203-LF-R205 action=merge -->
-
 Multi-source agreement increases credibility only when the sources point to the same object, version, time and proposition. A paper's mechanism that agrees with the official code's entry point improves implementation inspectability. A system card that agrees with product logs confirms the deployment location the vendor claims. A standard's status that agrees with verification records confirms the specification steps. Official or judicial records that agree with platform actions fill in a specific incident chain. Where sources conflict, they are not put to a vote by count. Compare directness, version, independence and scope of reference instead, and retain the unknowns. A regulation cannot prove enforcement effectiveness. An incident cannot prove algorithmic accuracy. A local experiment cannot prove a paper's main results. Static code cannot prove that something runs.
-
-<!-- new_id=A-V2-08-010 origins=L00448-L00476,L00517-L00518,L00524-L00539 evidence=LF-E188-LF-E192;LF-R203-LF-R205 action=merge -->
 
 Stopping rules are triggered jointly by comparability and reproduction status. Where a common endpoint, an independent denominator, an attack budget, a model protocol or variance is missing, ASR, FID, FVD and AUC are not pooled. No forest plot, heterogeneity or unified ranking is generated. Where the status is `NOT_ATTEMPTED`, `PARTIAL_RUN` or `STATIC_AUDIT_ONLY`, the wording “reproduced” is not used. The statistical status of this survey remains `NOT_RUN_MISSING_VARIANCE_AND_INDEPENDENCE`, and end-to-end execution remains `end_to_end_runs=0`. This chapter therefore checks evidence use and stopping boundaries. It does not fuse multi-source material into a single deterministic authenticity score, and it does not prove production effectiveness.
 
