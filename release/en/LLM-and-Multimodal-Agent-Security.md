@@ -1,3 +1,27 @@
+
+
+<!-- toc:start -->
+## Contents
+
+- [LLM and Multimodal Agent Security: An Evidence-Grounded Taxonomy of Attacks and Defenses](#llm-and-multimodal-agent-security-an-evidence-grounded-taxonomy-of-attacks-and-defenses)
+  - [Abstract](#abstract)
+  - [Introduction](#introduction)
+  - [Corpus Selection and Coding Method](#corpus-selection-and-coding-method)
+  - [Background and Input/Output Contract](#background-and-inputoutput-contract)
+  - [Taxonomy Design and Coverage Audit](#taxonomy-design-and-coverage-audit)
+  - [Defense Method Families](#defense-method-families)
+  - [Cross-Family Synthesis and Selection Guide](#cross-family-synthesis-and-selection-guide)
+  - [Data, Metrics, and Evaluation Evidence](#data-metrics-and-evaluation-evidence)
+  - [Incidents, Reproduction, and Deployment Mapping](#incidents-reproduction-and-deployment-mapping)
+  - [Challenges, Future Trends, and Evidence Limits](#challenges-future-trends-and-evidence-limits)
+  - [Conclusion](#conclusion)
+  - [Open Materials and Reproduction Statement](#open-materials-and-reproduction-statement)
+- [Appendix — Post-cutoff update (2026-08-06 → 2026-09-26)](#appendix--post-cutoff-update-2026-08-06-→-2026-09-26)
+  - [A.1 — The OpenAI–Hugging Face incident: the "not yet published" judgement is now overturned](#a1--the-openaihugging-face-incident-the-not-yet-published-judgement-is-now-overturned)
+  - [A.2 — New papers and benchmarks since the cutoff](#a2--new-papers-and-benchmarks-since-the-cutoff)
+  - [A.3 — New vulnerabilities since the cutoff](#a3--new-vulnerabilities-since-the-cutoff)
+  - [A.4 — How to use this appendix](#a4--how-to-use-this-appendix)
+<!-- toc:end -->
 # LLM and Multimodal Agent Security: An Evidence-Grounded Taxonomy of Attacks and Defenses
 
 ## Abstract
@@ -20,7 +44,7 @@ The research questions run in order. How do attacks cross trust boundaries? How 
 
 Figure \ref{fig:search-flow} shows the auditable process of search, prioritization and evidence assembly.
 
-![Candidate retrieval, machine prioritization, and manual evidence assembly process. OpenAlex candidates have not yet undergone complete dual-reviewer full-text screening. This survey therefore does not use the strict systematic review label.](figures/search-flow.png)
+![Candidate retrieval, machine prioritization, and manual evidence assembly process. OpenAlex candidates have not yet undergone complete dual-reviewer full-text screening. This survey therefore does not use the strict systematic review label.](../figures/search-flow.png)
 
 *Candidate retrieval, machine prioritization, and manual evidence assembly process. OpenAlex candidates have not yet undergone complete dual-reviewer full-text screening. This survey therefore does not use the strict systematic review label.*
 
@@ -91,7 +115,7 @@ The primary taxonomy axis answers only one question: which trust boundary does t
 
 Figure \ref{fig:unified-taxonomy} shows the single primary taxonomy axis used throughout this survey, together with the cross-cutting labels.
 
-![Unified taxonomy coordinates. The primary axis is the location of the end-to-end trust boundary that the attack impact crosses. Entry, attacker privilege, persistence, consequence and defense location serve only as secondary codes. The figure is redrawn from structured evidence of the earlier project.](figures/unified-taxonomy.png)
+![Unified taxonomy coordinates. The primary axis is the location of the end-to-end trust boundary that the attack impact crosses. Entry, attacker privilege, persistence, consequence and defense location serve only as secondary codes. The figure is redrawn from structured evidence of the earlier project.](../figures/unified-taxonomy.png)
 
 *Unified taxonomy coordinates. The primary axis is the location of the end-to-end trust boundary that the attack impact crosses. Entry, attacker privilege, persistence, consequence and defense location serve only as secondary codes. The figure is redrawn from structured evidence of the earlier project.*
 
@@ -255,7 +279,7 @@ This class of controls demotes model output into a candidate plan. Five gates---
 
 Figure \ref{fig:text-harness-results} gives the per-configuration results of the local synthetic mechanism probe for the text harness.
 
-![Text Harness synthetic reproduction. The capability gate did not eliminate dangerous intent, but it did stop dangerous actions from landing. The denominator holds only six synthetic scenarios, so the results serve mechanistic illustration rather than model ranking.](figures/text-harness-results.png)
+![Text Harness synthetic reproduction. The capability gate did not eliminate dangerous intent, but it did stop dangerous actions from landing. The denominator holds only six synthetic scenarios, so the results serve mechanistic illustration rather than model ranking.](../figures/text-harness-results.png)
 
 *Text Harness synthetic reproduction. The capability gate did not eliminate dangerous intent, but it did stop dangerous actions from landing. The denominator holds only six synthetic scenarios, so the results serve mechanistic illustration rather than model ranking.*
 
@@ -349,7 +373,7 @@ This class of controls sits at the execution and artifact boundary. It separatel
 
 The selection logic for execution isolation carriers and external capability controls appears in Figure \ref{fig:sandbox-capability-selection}.
 
-![Selecting an isolation boundary by workload and required capabilities. Execution, network, secret, and resource restrictions are mutually independent, and the options in the figure are not absolute security levels.](figures/sandbox-capability-selection.png)
+![Selecting an isolation boundary by workload and required capabilities. Execution, network, secret, and resource restrictions are mutually independent, and the options in the figure are not absolute security levels.](../figures/sandbox-capability-selection.png)
 
 *Selecting an isolation boundary by workload and required capabilities. Execution, network, secret, and resource restrictions are mutually independent, and the options in the figure are not absolute security levels.*
 
@@ -467,7 +491,7 @@ Three different statistical units run through this project: 65 attack-paper reco
 
 Figure \ref{fig:evidence-map} shows the heterogeneous evidence map of attack papers, defense sources, and incident records.
 
-![Evidence map. Attack papers, defense and engineering sources, and event records use different units of analysis and cannot be added into a single total number of papers.](figures/evidence-map.png)
+![Evidence map. Attack papers, defense and engineering sources, and event records use different units of analysis and cannot be added into a single total number of papers.](../figures/evidence-map.png)
 
 *Evidence map. Attack papers, defense and engineering sources, and event records use different units of analysis and cannot be added into a single total number of papers.*
 
@@ -479,7 +503,7 @@ Every computable effect first answers five questions. Is the success endpoint ex
 
 Figure \ref{fig:meta-composability} shows the poolability audit, from 34 studies to zero formal pooled groups.
 
-![Meta-analytic poolability audit. The five studies that pass the numerical contract fall into five different endpoints, all groups are single studies, and therefore there are zero formal pooled groups.](figures/meta-composability.png)
+![Meta-analytic poolability audit. The five studies that pass the numerical contract fall into five different endpoints, all groups are single studies, and therefore there are zero formal pooled groups.](../figures/meta-composability.png)
 
 *Meta-analytic poolability audit. The five studies that pass the numerical contract fall into five different endpoints, all groups are single studies, and therefore there are zero formal pooled groups.*
 
@@ -607,7 +631,7 @@ The unified table does not contain enough auditable defense_layers codings, and 
 
 Figure \ref{fig:correlation-results} shows the exploratory study-level Spearman, bootstrap and permutation test results.
 
-![Study-level exploratory correlations. The intervals and permutation tests are used to describe the landscape of the sampled literature and do not support causal inference about deployment.](figures/correlation-results.png)
+![Study-level exploratory correlations. The intervals and permutation tests are used to describe the landscape of the sampled literature and do not support causal inference about deployment.](../figures/correlation-results.png)
 
 *Study-level exploratory correlations. The intervals and permutation tests are used to describe the landscape of the sampled literature and do not support causal inference about deployment.*
 
@@ -625,7 +649,7 @@ HF's forensic window runs from 2026-07-09 02:28 UTC to 07-13 14:14 UTC, about 4.
 
 Figure \ref{fig:hf-incident-timeline} shows the attack, defense and disclosure timeline of the OpenAI evaluation agent crossing the authorization boundary into Hugging Face.
 
-![The 2026 attack, defense, and disclosure timeline of the OpenAI evaluation agent crossing the authorization boundary into Hugging Face. Entries within a swimlane are ordered by time; vertical position across swimlanes does not indicate simultaneity.](figures/hf-incident-timeline.png)
+![The 2026 attack, defense, and disclosure timeline of the OpenAI evaluation agent crossing the authorization boundary into Hugging Face. Entries within a swimlane are ordered by time; vertical position across swimlanes does not indicate simultaneity.](../figures/hf-incident-timeline.png)
 
 *The 2026 attack, defense, and disclosure timeline of the OpenAI evaluation agent crossing the authorization boundary into Hugging Face. Entries within a swimlane are ordered by time; vertical position across swimlanes does not indicate simultaneity.*
 

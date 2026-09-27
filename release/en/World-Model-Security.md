@@ -1,3 +1,33 @@
+
+
+<!-- toc:start -->
+## Contents
+
+- [World Model Security: Attacks and Defenses across World, Environment, Action, and Control Models](#world-model-security-attacks-and-defenses-across-world-environment-action-and-control-models)
+  - [Abstract](#abstract)
+  - [Introduction: When Imagination Becomes Decision and Control Infrastructure](#introduction-when-imagination-becomes-decision-and-control-infrastructure)
+  - [Conceptual Boundaries and Article Structure](#conceptual-boundaries-and-article-structure)
+  - [Retrieval, Screening, and Evidence Methods](#retrieval-screening-and-evidence-methods)
+  - [Threat Model and Safety Properties](#threat-model-and-safety-properties)
+  - [Attack Surface: From Supply Chain to Real-World Execution](#attack-surface-from-supply-chain-to-real-world-execution)
+  - [Defense, Runtime Assurance, and Recovery](#defense-runtime-assurance-and-recovery)
+  - [Analysis and Comparison of Representative Papers](#analysis-and-comparison-of-representative-papers)
+  - [Happy Oyster and MoWorld: Product/Project Entity Resolution](#happy-oyster-and-moworld-productproject-entity-resolution)
+  - [Application Scenarios and Deployment Risk Mapping](#application-scenarios-and-deployment-risk-mapping)
+  - [Datasets, Metrics, and Results That Cannot Be Pooled](#datasets-metrics-and-results-that-cannot-be-pooled)
+  - [News, Industry Signals, and Governance Integration](#news-industry-signals-and-governance-integration)
+  - [Code Audit and Safety Reproduction Status](#code-audit-and-safety-reproduction-status)
+  - [Cross-Family Synthesis and Deployment Choices](#cross-family-synthesis-and-deployment-choices)
+  - [Future Trends and a Falsifiable Research Agenda](#future-trends-and-a-falsifiable-research-agenda)
+  - [Limitations](#limitations)
+  - [Conclusion](#conclusion)
+  - [Citation and Evidence Notes](#citation-and-evidence-notes)
+- [Appendix — Post-cutoff update (2026-08-09 → 2026-09-26)](#appendix--post-cutoff-update-2026-08-09-→-2026-09-26)
+  - [A.1 — New world-model security work since the cutoff](#a1--new-world-model-security-work-since-the-cutoff)
+  - [A.2 — The terminology gap is still open](#a2--the-terminology-gap-is-still-open)
+  - [A.3 — Institutional consequence of the OpenAI–Hugging Face incident](#a3--institutional-consequence-of-the-openaihugging-face-incident)
+  - [A.4 — How to use this appendix](#a4--how-to-use-this-appendix)
+<!-- toc:end -->
 # World Model Security: Attacks and Defenses across World, Environment, Action, and Control Models
 
 > Research materials are current as of 2026-08-09
@@ -41,7 +71,7 @@ A name alone cannot settle terminology. This survey defines a world model as a s
 
 *Unified functional contract: the coupling of the predictor with the action/controller.*
 
-![World-model closed-loop security contract. The primary code follows the first-broken functional interface, not the appearance of the perturbation.](figures/fig01_closed_loop_contract.png)
+![World-model closed-loop security contract. The primary code follows the first-broken functional interface, not the appearance of the perturbation.](../figures/fig01_closed_loop_contract.png)
 
 *World-model closed-loop security contract. The primary code follows the first-broken functional interface, not the appearance of the perturbation.*
 
@@ -63,7 +93,7 @@ This project froze its research questions, article structure, inclusion/exclusio
 
 The pipeline starting point contains 851 deduplicated arXiv candidates, 99 historical discovery seeds, and 78 targeted academic candidates. Cross-source deduplication leaves 991. Of these, 78 enter high-relevance review, 76 are included in the qualitative evidence base, and 23 are the direct attack-defense or close-bridging core. 35 core PDFs are locally verified. In addition, 15 entities and 36 event records are established. Broad queries are capped for auditability, so the 913 items serve only as a candidate index. They were not disguised as manual full-text exclusions. This survey is therefore a transparent classification review. It does not claim to have completed a strict dual-independent PRISMA-style systematic review.
 
-![Corpus pipeline. Broad retrieval and core full-text evidence are clearly separated.](figures/fig02_corpus_flow.png)
+![Corpus pipeline. Broad retrieval and core full-text evidence are clearly separated.](../figures/fig02_corpus_flow.png)
 
 *Corpus pipeline. Broad retrieval and core full-text evidence are clearly separated.*
 
@@ -106,7 +136,7 @@ Malicious attacks and natural failures must be strictly distinguished. Natural d
 
 Of the 25 unified attack cards, 16 are direct world-model malicious-safety evidence and 9 are explicitly extrapolatable bridges from VLA, RL, trajectory prediction, MPC, or video dynamics. A card is a mechanism-coding unit, not an independent paper. One source can contribute multiple attack, evaluation, and defense cards. The author groups of Hallucination-Driven and ARB4WM, for example, overlap heavily, so they cannot be treated as independent replication studies. The primary-code distribution of the direct cards is: observation/context 6, supply chain 3, planning/action/control 2, goal/value/constraint 2, state/memory 1, execution/feedback/tool 1, privacy/intellectual property 1. These numbers are not attack effect sizes, nor do they represent real-world incidence rates.
 
-![Distribution of core attack and defense cards by first-broken interface. Each paper is counted only once under its primary interface. ](figures/fig03_attack_defense_evidence_map.png)
+![Distribution of core attack and defense cards by first-broken interface. Each paper is counted only once under its primary interface. ](../figures/fig03_attack_defense_evidence_map.png)
 
 *Distribution of core attack and defense cards by first-broken interface. Each paper is counted only once under its primary interface.*
 
@@ -235,7 +265,7 @@ This round's conclusion on meta-analysis is "do not run, because comparability i
 
 The 36-event timeline covers 2018-03-27 through 2026-07-30. It spans capability/product, direct attack/red teaming, defense/assurance, and governance/standards. The capability line starts from World Models and passes through latent planning, generative driving worlds, interactive video, and physical AI platforms. In 2026 it enters a phase of WAM, runtime assurance, and high-density safety papers. NVIDIA's Cosmos release shows world foundation models becoming parts of physical AI platforms. Happy Oyster and MoWorld carry the product signal of real-time, open-world creation and rapid interactive generation. But a product release is not safety evidence, and more papers do not equal more real-world attack incidents.[@nvidia2025cosmosblog] [@happyoyster2026] [@moxin2026moworld]
 
-![Timeline of world model capability, attack-defense, and governance events. All events are retained as points, and only time anchors are labeled; labels do not represent influence or evidence strength.](figures/fig04_news_timeline.png)
+![Timeline of world model capability, attack-defense, and governance events. All events are retained as points, and only time anchors are labeled; labels do not represent influence or evidence strength.](../figures/fig04_news_timeline.png)
 
 *Timeline of world model capability, attack-defense, and governance events. All events are retained as points, and only time anchors are labeled; labels do not represent influence or evidence strength.*
 
@@ -264,7 +294,7 @@ The reproduction workflow first audits the current official repositories of BadW
 
 In this run, END_TO_END=0. The status comes from per-command receipts and output hashes. The existence of a repository, a dependency installation, or a formula proxy does not equal an end-to-end attack or defense reproduction.
 
-![Actual code audit and reproduction status ladder. PARTIAL_MECHANISM only means that a code- or formula-level mechanism has been run on safe toy inputs.](figures/fig05_reproduction_ladder.png)
+![Actual code audit and reproduction status ladder. PARTIAL_MECHANISM only means that a code- or formula-level mechanism has been run on safe toy inputs.](../figures/fig05_reproduction_ladder.png)
 
 *Actual code audit and reproduction status ladder. PARTIAL_MECHANISM only means that a code- or formula-level mechanism has been run on safe toy inputs.*
 

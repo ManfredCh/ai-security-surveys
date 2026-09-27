@@ -4,7 +4,7 @@
 
 **四篇证据综述：LLM 与智能体、图像与视频生成、具身闭环、世界模型。**
 
-<sub>4 篇 · 21 万汉字 · 251 页 PDF · 附英文译本</sub>
+<sub>4 篇 · 21 万汉字 · 223 页 PDF · 附英文译本</sub>
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  ·  [![Status](https://img.shields.io/badge/Status-compiled_draft-orange)](#状态与边界)  ·  [![Language](https://img.shields.io/badge/Language-English_%7C_%E4%B8%AD%E6%96%87-blue)](#语言与版本)  ·  [![图谱](https://img.shields.io/badge/%E5%9B%BE%E8%B0%B1-97_%E7%AF%87-informational)](release/zh/图谱_97篇索引.md)
 
@@ -18,6 +18,39 @@
 
 ---
 
+
+<!-- toc:start -->
+<details open>
+<summary><b>目录</b></summary>
+
+- [主题](#主题)
+- [概述](#概述)
+- [文件与格式](#文件与格式)
+- [四篇综述](#四篇综述)
+  - [① 从模型越狱到系统隔离](#①-从模型越狱到系统隔离)
+  - [② 从首破接口到纵深防御](#②-从首破接口到纵深防御)
+  - [③ 从看错到做错](#③-从看错到做错)
+  - [④ 从想象世界到控制现实](#④-从想象世界到控制现实)
+  - [旧稿留档](#旧稿留档)
+- [学习路径](#学习路径)
+- [语言与版本](#语言与版本)
+- [仓库结构](#仓库结构)
+- [更新日志](#更新日志)
+  - [v0.2.0 — 2026-09-26](#v020--2026-09-26)
+  - [v0.1.0 — 2026-09-26](#v010--2026-09-26)
+- [截止与后续纳入](#截止与后续纳入)
+  - [截止后发现并已登记的材料（检索于 2026-09-26）](#截止后发现并已登记的材料检索于-2026-09-26)
+- [状态与边界](#状态与边界)
+- [引用](#引用)
+- [参与贡献](#参与贡献)
+- [致谢](#致谢)
+- [星标趋势](#星标趋势)
+- [许可](#许可)
+- [相关仓库](#相关仓库)
+
+</details>
+<!-- toc:end -->
+
 ## 主题
 
 四篇问的是同一个问题，只是换了领域：**哪个功能接口最先守不住自己的安全合同，本来该在哪里把它中断？**
@@ -27,10 +60,9 @@
 
 | Language | README | Documents |
 |---|---|---|
-| **简体中文** | 本文件 | 四篇中文原稿 + 图谱索引，21 万汉字，251 页 PDF |
+| **简体中文** | 本文件 | 四篇中文原稿 + 图谱索引，21 万汉字，223 页 PDF |
 | **English** | [README.md](README.md) | four surveys, 160k words, 335 pages of PDF |
 
-[主题](#主题) · [概述](#概述) · [文件](#文件与格式) · [学习路径](#学习路径) · [引用](#引用) · [路线图](#截止与后续纳入) · [许可](#许可) · [贡献](#参与贡献)
 
 ## 概述
 
@@ -55,8 +87,8 @@
 
 | | |
 |---|---|
-| 中文 | [从模型越狱到系统隔离.md](release/zh/从模型越狱到系统隔离.md) · [47 页](release/zh/从模型越狱到系统隔离.pdf) |
-| English | [LLM-and-Multimodal-Agent-Security.md](release/en/LLM-and-Multimodal-Agent-Security.md) · [50 页](release/en/LLM-and-Multimodal-Agent-Security.pdf) |
+| 中文 | [从模型越狱到系统隔离.md](release/zh/从模型越狱到系统隔离.md) · [36 页](release/zh/从模型越狱到系统隔离.pdf) |
+| English | [LLM-and-Multimodal-Agent-Security.md](release/en/LLM-and-Multimodal-Agent-Security.md) · [52 页](release/en/LLM-and-Multimodal-Agent-Security.pdf) |
 | 篇幅 | 约 2 小时 · 11 章 |
 | 结构 | 语料与编码方法 → 背景与输入输出合同 → 分类设计与覆盖审计 → 防御方法家族 → 跨家族综合 → 数据指标与评价证据 → 事件复现与部署映射 → 挑战与证据限制 |
 
@@ -70,8 +102,8 @@
 
 | | |
 |---|---|
-| 中文 | [从首破接口到纵深防御.md](release/zh/从首破接口到纵深防御.md) · [136 页](release/zh/从首破接口到纵深防御.pdf) |
-| English | [Image-and-Video-Generation-Security.md](release/en/Image-and-Video-Generation-Security.md) · [203 页](release/en/Image-and-Video-Generation-Security.pdf) |
+| 中文 | [从首破接口到纵深防御.md](release/zh/从首破接口到纵深防御.md) · [127 页](release/zh/从首破接口到纵深防御.pdf) |
+| English | [Image-and-Video-Generation-Security.md](release/en/Image-and-Video-Generation-Security.md) · [204 页](release/en/Image-and-Video-Generation-Security.pdf) |
 | 篇幅 | 约 7 小时 · 12 章 + 4 附录 |
 | 结构 | 证据治理 → 系统边界与威胁模型 → I1–I7 分类 → 镜像证据综合 → 跨接口纵深防御 → 视频专项 → 工程检验 → 部署决策 → 局限与双用途 → 可证伪议程；附录含 27 项论文深析与 32 张事件卡 |
 
@@ -86,8 +118,8 @@
 
 | | |
 |---|---|
-| 中文 | [从看错到做错.md](release/zh/从看错到做错.md) · [46 页](release/zh/从看错到做错.pdf) |
-| English | [Closed-Loop-Security-of-VLM-VLA-and-World-Action-Models.md](release/en/Closed-Loop-Security-of-VLM-VLA-and-World-Action-Models.md) · [64 页](release/en/Closed-Loop-Security-of-VLM-VLA-and-World-Action-Models.pdf) |
+| 中文 | [从看错到做错.md](release/zh/从看错到做错.md) · [42 页](release/zh/从看错到做错.pdf) |
+| English | [Closed-Loop-Security-of-VLM-VLA-and-World-Action-Models.md](release/en/Closed-Loop-Security-of-VLM-VLA-and-World-Action-Models.md) · [67 页](release/en/Closed-Loop-Security-of-VLM-VLA-and-World-Action-Models.pdf) |
 | 篇幅 | 约 3 小时 |
 | 附赠 | [图谱_97篇索引.md](release/zh/图谱_97篇索引.md)——97 篇逐篇算法图谱链接版（论文 + arXiv + 许可 + 机制要点） |
 
@@ -102,8 +134,8 @@
 
 | | |
 |---|---|
-| 中文 | [从想象世界到控制现实.md](release/zh/从想象世界到控制现实.md) · [22 页](release/zh/从想象世界到控制现实.pdf) |
-| English | [World-Model-Security.md](release/en/World-Model-Security.md) · [22 页](release/en/World-Model-Security.pdf) |
+| 中文 | [从想象世界到控制现实.md](release/zh/从想象世界到控制现实.md) · [18 页](release/zh/从想象世界到控制现实.pdf) |
+| English | [World-Model-Security.md](release/en/World-Model-Security.md) · [24 页](release/en/World-Model-Security.pdf) |
 | 篇幅 | 约 1 小时 · 17 章 |
 | 结构 | 概念边界 → 检索方法 → 威胁模型 → 攻击面 → 防御与恢复 → 代表性文章解析 → 产品实体解析 → 部署风险 → 不可合并的结果 → 新闻与治理 → 代码审计 → 跨家族综合 → 未来趋势 → 局限 |
 

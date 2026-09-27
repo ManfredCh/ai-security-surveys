@@ -1,3 +1,33 @@
+
+
+<!-- toc:start -->
+## Contents
+
+- [Image and Video Generation Security: An Evidence Review of First-Broken Interfaces and Defense in Depth](#image-and-video-generation-security-an-evidence-review-of-first-broken-interfaces-and-defense-in-depth)
+  - [Abstract](#abstract)
+  - [1. Introduction: Problem, Gap, Scope, and Research Questions](#1-introduction-problem-gap-scope-and-research-questions)
+  - [2. Survey Method and Evidence Governance](#2-survey-method-and-evidence-governance)
+  - [3. Technical System Boundaries and Threat Model](#3-technical-system-boundaries-and-threat-model)
+  - [4. First-Broken Interface Classification, Evidence Map, and Comparison Contract](#4-first-broken-interface-classification-evidence-map-and-comparison-contract)
+  - [5. Mirror-Evidence Synthesis for I1-I7: Attack Mechanisms and Earliest Interruption Control](#5-mirror-evidence-synthesis-for-i1-i7-attack-mechanisms-and-earliest-interruption-control)
+  - [6. Cross-Interface Defense in Depth: Composition, Roots of Trust, and Failure Propagation](#6-cross-interface-defense-in-depth-composition-roots-of-trust-and-failure-propagation)
+  - [7. Video Generation Special-Topic Synthesis: Time, Motion, Audio-Visual, and Streaming State](#7-video-generation-special-topic-synthesis-time-motion-audio-visual-and-streaming-state)
+  - [8. Reality and Engineering Checks on Multi-Source Evidence](#8-reality-and-engineering-checks-on-multi-source-evidence)
+  - [9. Discussion: Cross-Family Interpretation and Conditional Deployment Decisions](#9-discussion-cross-family-interpretation-and-conditional-deployment-decisions)
+  - [10. Limitations, Ethics, Dual Use, and Author Responsibility](#10-limitations-ethics-dual-use-and-author-responsibility)
+  - [11. A Falsifiable Research Agenda](#11-a-falsifiable-research-agenda)
+  - [12. Conclusion](#12-conclusion)
+  - [Appendix A. Unified In-Depth Analysis of 27 Papers and Page-Level Evidence Cards](#appendix-a-unified-in-depth-analysis-of-27-papers-and-page-level-evidence-cards)
+  - [Appendix B. Datasets, Metrics, Complete Comparison Matrix, and Statistical Rejection Records](#appendix-b-datasets-metrics-complete-comparison-matrix-and-statistical-rejection-records)
+  - [Appendix C. 32 event cards, news, and policy timeline](#appendix-c-32-event-cards-news-and-policy-timeline)
+  - [Appendix D. Local experiments, static audit of seven repositories, and build receipts](#appendix-d-local-experiments-static-audit-of-seven-repositories-and-build-receipts)
+  - [Data, Code, and Status Declarations](#data-code-and-status-declarations)
+- [Appendix — Post-cutoff update (2026-08-09 → 2026-09-26)](#appendix--post-cutoff-update-2026-08-09-→-2026-09-26)
+  - [A.1 — Follow-up to event card E010: the OpenAI–Hugging Face incident has entered an institutional phase](#a1--follow-up-to-event-card-e010-the-openaihugging-face-incident-has-entered-an-institutional-phase)
+  - [A.2 — New deepfake and authenticity events since the cutoff](#a2--new-deepfake-and-authenticity-events-since-the-cutoff)
+  - [A.3 — Provenance and standards movement since the cutoff](#a3--provenance-and-standards-movement-since-the-cutoff)
+  - [A.4 — How to use this appendix](#a4--how-to-use-this-appendix)
+<!-- toc:end -->
 # Image and Video Generation Security: An Evidence Review of First-Broken Interfaces and Defense in Depth
 
 ## Abstract
@@ -263,7 +293,7 @@ The Ditse directory stores the complete queries, raw OpenAlex returns, priority 
 Timeliness facts are current as of August 9, 2026. Product system cards, platform policies, standard versions, regulatory applicability and litigation status may change. An updated retrieval must be performed before formal submission. This survey treats the access date and the object version as part of the evidence contract. A claim that "the current page states" something cannot be written as a permanent product capability.
 
 <!-- new_id=M-L00051 origins=L00051 evidence=LF-R201-LF-R205 action=move -->
-![Layered narrowing of auditable retrieval. Counts come from the OpenAlex manifest, the core anchor table, and the full-text inventory; the candidate count does not equal the inclusion count](paper/figures/fig02_evidence_funnel.png)
+![Layered narrowing of auditable retrieval. Counts come from the OpenAlex manifest, the core anchor table, and the full-text inventory; the candidate count does not equal the inclusion count](../figures/fig02_evidence_funnel.png)
 
 **Table: Retrieval and evidence hierarchy**
 
@@ -379,7 +409,7 @@ Video generation is not running the same image generator independently on every 
 T2VSafetyBench separates temporal risk from static harmful categories. It requires safety judgment to target the actual video frame sequence [@P034]. BadVideo further shows that a training backdoor's goals can be expressed through spatiotemporal composition and dynamic elements. A set of frames that each look harmless individually therefore cannot support the inference that the whole clip is safe [@P007]. Two Frames Matter pushes this logic to boundary frames and intermediate completion. The start condition and the end condition may each pass filtering on their own. The trajectory the model generates between them is the actual object of risk [@LN05]. Together these results constitute the basic video principle of this survey. Without event-level, trajectory-level, audio-visual-level, and streaming evaluation, research can at most claim that it is "effective on the extracted frames."
 
 <!-- new_id=M-L00028 origins=L00028 evidence=LF-A001-LF-A042 action=move -->
-![Technical evolution and migration of security interfaces. Redrawn by this survey from technology_security.csv; the stage order does not represent risk magnitude or technical superiority](paper/figures/fig06_technology_security.png)
+![Technical evolution and migration of security interfaces. Redrawn by this survey from technology_security.csv; the stage order does not represent risk magnitude or technical superiority](../figures/fig06_technology_security.png)
 
 <!-- new_id=M-L00029 origins=L00029 evidence=LF-A001-LF-A042 action=move -->
 **Table: Technology families, state changes, and newly added attack surfaces**
@@ -440,7 +470,7 @@ No attack enters this survey's comparison table until twelve fields are filled i
 The evidence type sets the limits of the claim. For a full-text experiment by the authors, the permitted wording is “the study reports under the stated models, data, and budget”. For an official system card, it is “the vendor states deployment or evaluation”. “Verified on-site by a third party” is not permitted. The Sora 2 system card reports prompt, video frame, audio transcript and scene description review, and it also reports C2PA, visible dynamic watermarking and identity consent controls. This survey treats that card as product design evidence, not as retention-rate evidence across all platforms [@R-A035]. This subtask likewise ran no attack code, so it does not use the result category “we reproduced”.
 
 <!-- new_id=M-L00065 origins=L00065 evidence=LF-A001-LF-A042 action=move -->
-![Generative visual systems, first-broken interfaces, and consequence layers. Redrawn by this survey from the central taxonomy and attack–defense matrix; L1 cannot automatically entail L5](paper/figures/fig01_attack_surface.png)
+![Generative visual systems, first-broken interfaces, and consequence layers. Redrawn by this survey from the central taxonomy and attack–defense matrix; L1 cannot automatically entail L5](../figures/fig01_attack_surface.png)
 
 <!-- new_id=M-L00066 origins=L00066 evidence=LF-A001-LF-A042 action=move -->
 **Table: Assets, Attack Actors, Privileges, and Consequences**
@@ -1409,7 +1439,7 @@ Revocation must handle signing certificates, watermark detection keys/algorithm 
 Detection, watermarking, fingerprinting, signing, C2PA and platform handling are complementary evidence. They are not six algorithms competing on the same metric. C2PA 2.4 standardizes and covers more video packaging and soft binding scenarios. Coverage in the specification, however, does not mean that any two implementations already interoperate. Nor does it mean that every social platform retains it. SynthID and VideoSeal can provide content-embedded signals. That does not amount to proving that other generators are true or that users can be traced. Detectors can cover non-cooperating generators. That does not mean the open world can be policed by them alone. Deployment must treat the following as six independent gates: "representable in the specification", "implemented in tools", "cross-implementation interoperability tests passed", "survives in experiments", "still retained after platform processing" and "correct handling triggered".
 
 <!-- new_id=M-L00296 origins=L00296 evidence=LF-D043-LF-D095 action=move -->
-![Attacks and defenses mirrored on the seven first-broken interfaces. Redrawn in this survey based on attack_defense_matrix.csv; the deployment location does not mean that the defense has universal effect](paper/figures/fig03_attack_defense_mirror.png)
+![Attacks and defenses mirrored on the seven first-broken interfaces. Redrawn in this survey based on attack_defense_matrix.csv; the deployment location does not mean that the defense has universal effect](../figures/fig03_attack_defense_mirror.png)
 
 <!-- new_id=M-L00297 origins=L00297 evidence=LF-D043-LF-D095 action=move -->
 **Table: Contract differences among detection, watermarking, signing, and provenance attestation**
@@ -1737,7 +1767,7 @@ The fourth stage is post-mortem and prevention. After an incident ends, several 
 Closed-loop evaluation should report at least detection latency, human confirmation latency, propagation-pause latency, similar-copy coverage, appeal handling, restoration of correct content, victim notification and evidence deletion. It should not report only the "number of deletions." The denominators of these metrics are independent incidents, independent copies, independent appeals and independent victims, in that order. They cannot be interchanged. For live or high-propagation incidents, the exposure that already occurred before handling should also be reported. Rapid post-hoc deletion cannot erase views and downloads that have already happened.
 
 <!-- new_id=M-L00206 origins=L00206 evidence=LF-A018-LF-A023 action=move -->
-![security contracts newly added when image evidence is extrapolated to video. This survey provides a mechanistic synthesis; per-frame image results are not regarded as evidence for an entire video](paper/figures/fig05_image_video_difference.png)
+![security contracts newly added when image evidence is extrapolated to video. This survey provides a mechanistic synthesis; per-frame image results are not regarded as evidence for an entire video](../figures/fig05_image_video_difference.png)
 
 <!-- new_id=M-L00207 origins=L00207 evidence=LF-A018-LF-A023 action=move -->
 **Table: Differences between the image and video safety evidence contracts**
@@ -1973,7 +2003,7 @@ Explicit `NO-GO` conditions include displaying "not detected" as "authentic", us
 False positives and false negatives must not be composited into a single "safety score". The trust root must not be hidden inside a vendor black box. After a bypass is discovered, the attack-defense matrix must be updated and the combined chain retested. Revocation must reach content, credentials, caches, cases, and user interfaces at the same time. Real platform retention must be evidenced by the bytes actually received. Risks remain even if every gate passes: non-participating tools, offline propagation, unknown attacks, contextual judgment, and governance incentives. The final conclusion should therefore be "can operate within the given boundary and be audited continuously", not "solved the authenticity problem of generated media".
 
 <!-- new_id=M-L00569 origins=L00569 evidence=LF-D043-LF-D095 action=move -->
-![Defense in depth and responsibility boundaries across deployment forms. This survey synthesizes from deployment_decision.csv; color denotes responsibility level rather than performance score](paper/figures/fig09_deployment_layers.png)
+![Defense in depth and responsibility boundaries across deployment forms. This survey synthesizes from deployment_decision.csv; color denotes responsibility level rather than performance score](../figures/fig09_deployment_layers.png)
 
 <!-- new_id=M-L00570 origins=L00570 evidence=LF-D043-LF-D095 action=move -->
 **Table: Deployment conditions, control combinations, and residual risks**
@@ -2344,7 +2374,7 @@ Paper counts, product launches and news density cannot be extrapolated into futu
 ##### Three-stage observation window and stopping rules
 
 <!-- new_id=M-L00618 origins=L00618 evidence=LF-R201-LF-R205 action=move -->
-![Minimum verification and falsification routes for future topics. Topics come from future_agenda.csv; the original hypothesis not being supported is an allowed and necessary outcome](paper/figures/fig10_future_agenda.png)
+![Minimum verification and falsification routes for future topics. Topics come from future_agenda.csv; the original hypothesis not being supported is an allowed and necessary outcome](../figures/fig10_future_agenda.png)
 
 <!-- new_id=M-L00619 origins=L00619 evidence=LF-R201-LF-R205 action=move -->
 **Table: Future topics, minimum verification, and falsification criteria**
@@ -2823,7 +2853,7 @@ Video is not simply an increase in the number of images. It adds inter-frame dep
 Several conclusions remain not independently closed. They are trigger emergence of LoRA and motion modules in large-scale combinations; event-level extraction from video training data; real-time joint audio-visual attacks; and low-latency live-streaming watermarking. Also open are the retention and appeal outcomes of provenance credentials after transcoding on real platforms, along with the GPU-memory, queueing, and billing amplification of generation services. "Literature scarcity" here is not safety evidence, but a minimum verification requirement.
 
 <!-- new_id=M-L00444 origins=L00444 evidence=LF-A001-LF-A042 action=move -->
-![Mechanism lineage of representative studies. Positions come from paper_cards.csv and paper_lineage.csv; year and categorization do not indicate causality, influence, or performance ranking](paper/figures/fig07_paper_lineage.png)
+![Mechanism lineage of representative studies. Positions come from paper_cards.csv and paper_lineage.csv; year and categorization do not indicate causality, influence, or performance ranking](../figures/fig07_paper_lineage.png)
 
 <!-- new_id=M-L00445 origins=L00445 evidence=LF-A001-LF-A042 action=move -->
 **Table: Lineage Index of Representative Studies**
@@ -3080,7 +3110,7 @@ These two lawsuits show that "similarity", "memorization" or "training use" in a
 The current 32 materials can cover multiple evidence interfaces, but that coverage does not constitute a temporal growth trend. Government written responses can confirm property losses and investigations. Vendor announcements can confirm product actions. Judicial records can distinguish indictment, guilty plea, verdict and seizure. Regulations and standards can define obligations. Platform announcements can confirm labeling features. Media can provide only limited cross-checking when first-hand case files are missing. Different types of sources complement each other and cannot substitute for one another.
 
 <!-- new_id=M-L00520 origins=L00520 evidence=LF-E096-LF-E197 action=move -->
-![Timeline of event, product, and policy materials. The sample is the 32 event cards in event_timeline.csv; the figure shows the distribution of publication dates and does not indicate incidence or risk trends](paper/figures/fig08_event_timeline.png)
+![Timeline of event, product, and policy materials. The sample is the 32 event cards in event_timeline.csv; the figure shows the distribution of publication dates and does not indicate incidence or risk trends](../figures/fig08_event_timeline.png)
 
 <!-- new_id=M-L00521 origins=L00521 evidence=LF-E096-LF-E197 action=move -->
 **Table: Event topic clusters and evidence limits**
@@ -3167,7 +3197,7 @@ End-to-end upgrades should move through stages ordered by risk and representativ
 Suppose that in future only imports, help commands or single-sample visualization get completed. Even then the status cannot be written as a paper reproduction. Where weights are inaccessible, the license does not permit use, or running the code would increase real-world abuse capability, keep the NOT_ATTEMPTED/blocked note. Do not fill the gap with simulated numbers.
 
 <!-- new_id=M-L00541 origins=L00541 evidence=LF-R203-LF-R204 action=move -->
-![Local synthetic watermark experiments and reproduction status. The values come from reproductions/results; this is only PARTIAL_RUN and not a reproduction of the papers' main results](paper/figures/fig04_reproduction_results.png)
+![Local synthetic watermark experiments and reproduction status. The values come from reproductions/results; this is only PARTIAL_RUN and not a reproduction of the papers' main results](../figures/fig04_reproduction_results.png)
 
 <!-- new_id=M-L00542 origins=L00542 evidence=LF-R203-LF-R204 action=move -->
 **Table: Static audit status of the seven repositories**

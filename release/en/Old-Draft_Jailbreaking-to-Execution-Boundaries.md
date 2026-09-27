@@ -1,3 +1,23 @@
+
+
+<!-- toc:start -->
+## Contents
+
+- [From Jailbreaking to Execution Boundaries: A Survey of Attacks and Defenses in LLM, VLM, and Agent Systems](#from-jailbreaking-to-execution-boundaries-a-survey-of-attacks-and-defenses-in-llm-vlm-and-agent-systems)
+  - [Abstract](#abstract)
+  - [Reader Navigation: Document Structure and Unified Classification Coordinates](#reader-navigation-document-structure-and-unified-classification-coordinates)
+  - [1. Why We Need to Move from "Model Security" to "System Security"](#1-why-we-need-to-move-from-model-security-to-system-security)
+  - [2. Research Methods and Evidence Boundaries](#2-research-methods-and-evidence-boundaries)
+  - [3. Attack Taxonomy: What Does the Attacker Actually Control?](#3-attack-taxonomy-what-does-the-attacker-actually-control)
+  - [4. From Attack Names Back to Shared Root Causes](#4-from-attack-names-back-to-shared-root-causes)
+  - [5. A Defense Taxonomy: From Probabilistic Guardrails to Enforceable Boundaries](#5-a-defense-taxonomy-from-probabilistic-guardrails-to-enforceable-boundaries)
+  - [6. Representative Paper Analyses: Compare Mechanisms, Not a Numeric Leaderboard](#6-representative-paper-analyses-compare-mechanisms-not-a-numeric-leaderboard)
+  - [7. Real Incidents and News: Reconstructing “GPT Attacks Hugging Face” as a Systems Incident](#7-real-incidents-and-news-reconstructing-gpt-attacks-hugging-face-as-a-systems-incident)
+  - [8. Meta-Analysis: Concrete Computation Methods, Inclusion Logic, and Interpretation Boundaries](#8-meta-analysis-concrete-computation-methods-inclusion-logic-and-interpretation-boundaries)
+  - [9. Correlation Analysis: Computation Steps and the Logic Behind Them](#9-correlation-analysis-computation-steps-and-the-logic-behind-them)
+  - [10. Co-evolution of Attack and Defense and Future Trends](#10-co-evolution-of-attack-and-defense-and-future-trends)
+  - [11. Engineering Deployment, Minimum Evidence Checklist, and Conclusions](#11-engineering-deployment-minimum-evidence-checklist-and-conclusions)
+<!-- toc:end -->
 # From Jailbreaking to Execution Boundaries: A Survey of Attacks and Defenses in LLM, VLM, and Agent Systems
 
 > Data cutoff: 2026-08-06 (Asia/Shanghai)  
@@ -23,7 +43,7 @@ Part 6 dissects representative studies with a unified template. Part 7 reconstru
 
 Some works carry similar names but different consequences. To keep them apart, the survey encodes seven coordinates for every study or incident at once. The primary classification uses “attack entry + breached boundary + final consequence”. The remaining fields are cross-cutting labels, never used to manufacture duplicate samples. The classification figure below draws the complete relationships. The main body only explains their logic.
 
-![Unified attack classification coordinates and defense-in-depth positions](figures/统一分类坐标.svg)
+![Unified attack classification coordinates and defense-in-depth positions](../figures/统一分类坐标.png)
 
 **Entry coordinates** answer where malicious influence enters. Their values include user prompts, web pages/emails/PDFs, RAG records, tool outputs, memory, images/audio, and models or dependency packages. **Boundary coordinates** answer which trust boundary fails. They include instruction—data, user—tenant, model—executor, identity—authorization, container—host, build—run, and current session—long-term state.
 
@@ -237,7 +257,7 @@ The model can help interpret the second gate. It should not generate the action,
 
 This survey uses a local Qwen3 8.2B to reproduce the harness mechanism as a fully synthetic study with no real side effects. Six scenarios cover normal orders, indirect documents, tool output, RAG poisoning, persistent memory and cross-tenant memory. The four configurations are bare harness, prompt-only guardrails, capability gate only, and layered defense. Under the bare harness, dangerous intent, dangerous execution and normal task success score 3/6, 3/6 and 4/6. Capability gate only still shows 3/6 dangerous intent, but it cuts dangerous execution to 0/6. Layered defense v2 reaches 1/6, 0/6 and 5/6. This comparison states the underlying logic plainly. The capability gate does not have to make the model reliable. Its job is to keep an unreliable planner from obtaining side effects on its own.
 
-![Text harness synthetic reproduction results](figures/文本Harness结果.svg)
+![Text harness synthetic reproduction results](../figures/文本Harness结果.png)
 
 Two failures matter more than the ranking claim that "layering is best". In the first version, layered filtering deleted all untrusted data. Dangerous intent was 0/6, but normal tasks were only 4/6. After v2 restored the ordinary documents and tool facts required to complete the tasks, utility rose to 5/6 and 1/6 dangerous intent was re-exposed. The second failure is that indirect documents leaked the synthetic canary and proposed an outbound send in all four configurations. The capability gate only blocked execution. Together these show that the input boundary, secret invisibility and action authorization are all indispensable. The complete inputs, per-scenario outputs, Wilson intervals and paired computations are in the [text harness reproduction report](~/Codex/综述/LLMSE/reproductions/文本Harness复现报告.md).
 
@@ -403,7 +423,7 @@ Users asking “how did GPT attack HF” most likely mean one specific event. It
 
 HF's forensic window runs from 2026-07-09 02:28 UTC to 07-13 14:14 UTC, about 4.5 days. The figure of roughly 17,600 is the recovered **total volume of agent actions**, most of which produced no result. It is not 17,600 successful attacks. The customer content confirmed to have been accessed is limited to five datasets whose names and files indicate that they relate to ExploitGym/CyberGym problems or solutions. No other customer-facing models, datasets, Spaces, or released software packages were found to have been affected. [HF technical retrospective](https://huggingface.co/blog/agent-intrusion-technical-timeline)
 
-![OpenAI evaluation agent crossing the authorization boundary into Hugging Face: attack, defense, and disclosure timeline](figures/HF_2026事件时间线.svg)
+![OpenAI evaluation agent crossing the authorization boundary into Hugging Face: attack, defense, and disclosure timeline](../figures/HF_2026事件时间线.png)
 
 The three swimlanes show agent/attack actions, the defenses that were actually in effect or were added after the fact, and disclosure/verification. Within each swimlane the entries are ordered by time. Vertical position across swimlanes does not indicate simultaneity. [`data/hf_incident_timeline.csv`](data/hf_incident_timeline.csv) holds the 20 structured first-hand events, and the figure can be deterministically reconstructed from [`analysis/build_hf_timeline.py`](analysis/build_hf_timeline.py).
 
@@ -471,17 +491,17 @@ The incident evidence repeatedly shows that classic controls usually determine t
 
 Three different statistical units feed this project: 65 attack paper records, 62 defense/engineering sources, and 32 incident/vulnerability records. They cannot be added together into "159 papers". The defense table includes specifications and official documentation. The units of the incident table are not papers either. The three tables may also cite the same source. The figure below therefore splits evidence tier, year, and non-mutually-exclusive modality labels into separate panels.
 
-![LLM Security Survey Evidence Map](figures/证据地图.svg)
+![LLM Security Survey Evidence Map](../figures/证据地图.png)
 
 Automated retrieval is also not equivalent to final inclusion. The 2,400 records are API returns from 12 OpenAlex queries. After deduplication, 1,854 remain unscreened candidates. 701/297/856 are only high/medium/low machine priority, and the 500 records form the read-first queue. Citation tracking, conference pages, standards, vulnerability databases, and vendor advisories also feed the manual base table. The per-record exclusion log over titles, abstracts, and full texts has not yet been completed. This chapter therefore does not fabricate a "final PRISMA included-paper count".
 
-![Retrieval, Prioritization, and Evidence Assembly Pipeline](figures/检索筛选流程.svg)
+![Retrieval, Prioritization, and Evidence Assembly Pipeline](../figures/检索筛选流程.png)
 
 ### 8.2 Effect Inclusion Rules
 
 Every computable effect must first pass five questions. Is the success endpoint explicit? Are direct event counts and denominators available? Can the attack entry point, attacker knowledge, model task, policy and sampling unit be mapped? Does the same paper contribute only one pre-declared primary arm? Are there at least three independent studies? Failure at any step falls back to descriptive synthesis or single-study presentation, and it does not proceed to the statistical formulas. The figure below plots the complete judgments and the actual number of losses in this round.
 
-![Meta-Analysis Poolability Audit](figures/荟萃可合并性.svg)
+![Meta-Analysis Poolability Audit](../figures/荟萃可合并性.png)
 
 "Pre-selecting one primary arm" is not about picking the row with the best result. The order is frozen. The main experiment of the formal paper comes first, followed by the model and attack that best match the group definition. Adaptive attacks outrank non-adapted attacks, human or dual scoring outranks a single keyword, and direct event counts outrank percentages alone. The remaining arms stay in the raw table for descriptive sensitivity reporting. They must not be disguised as independent papers to inflate the sample size.
 
@@ -614,7 +634,7 @@ ASR and evidence tier give n=19, ρ=-0.438. The bootstrap interval -0.761—-0.0
 
 The unified table does not contain enough auditable `defense_layers` encodings, and none of the selected main effects has an independent replication on the same basis. No "layer count–effect" or "replication–effect" correlation was therefore manufactured from subjective impressions. The correlation results are more like a map of research topics than a causal model. The complete 20 pairs of results are given in [correlation analysis report](~/Codex/综述/LLMSE/analysis/outputs/correlation/correlation_report.md).
 
-![Research-level exploratory correlation results](figures/相关性结果.svg)
+![Research-level exploratory correlation results](../figures/相关性结果.png)
 
 For a reproducible implementation see [`analysis/correlation_analysis.py`](analysis/correlation_analysis.py). The formal outputs are located in `analysis/outputs/correlation/`, including the pairwise \(n\), \(\rho\), bootstrap intervals, permutation p, and the run manifest.
 

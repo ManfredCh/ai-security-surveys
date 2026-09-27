@@ -1,3 +1,27 @@
+
+
+<!-- toc:start -->
+## Contents
+
+- [Closed-Loop Security of VLM, VLA, and World-Action Models: An Evidence-Based Review](#closed-loop-security-of-vlm-vla-and-world-action-models-an-evidence-based-review)
+  - [Abstract](#abstract)
+  - [Introduction: Why the Security Problem Escalates from "Seeing Wrong" to "Doing Wrong"](#introduction-why-the-security-problem-escalates-from-seeing-wrong-to-doing-wrong)
+  - [Corpus, Search, and the Evidence Contract](#corpus-search-and-the-evidence-contract)
+  - [From Answer Safety to Action Safety: Technical Lineage and System Contract](#from-answer-safety-to-action-safety-technical-lineage-and-system-contract)
+  - [Closed-Loop Attack Taxonomy: The First-Broken System Interface](#closed-loop-attack-taxonomy-the-first-broken-system-interface)
+  - [How Attacks Propagate from Inputs to Physical Consequences](#how-attacks-propagate-from-inputs-to-physical-consequences)
+  - [Defense in Depth Mirrored to the Attack Chain](#defense-in-depth-mirrored-to-the-attack-chain)
+  - [Cross-Family Synthesis: When to Choose Which Layer of Control](#cross-family-synthesis-when-to-choose-which-layer-of-control)
+  - [Data, Metrics, and Quantitative Evidence Boundaries](#data-metrics-and-quantitative-evidence-boundaries)
+  - [Reproduction Audit and Anchor Cases](#reproduction-audit-and-anchor-cases)
+  - [Research Agenda, Practical Gates, and Limitations](#research-agenda-practical-gates-and-limitations)
+  - [Conclusion](#conclusion)
+- [Appendix — Post-cutoff update (2026-08-06 → 2026-09-26)](#appendix--post-cutoff-update-2026-08-06-→-2026-09-26)
+  - [A.1 — Remotely exploitable root-level flaws in a humanoid robot](#a1--remotely-exploitable-root-level-flaws-in-a-humanoid-robot)
+  - [A.2 — New embodied-attack papers since the cutoff](#a2--new-embodied-attack-papers-since-the-cutoff)
+  - [A.3 — Institutional consequence of the OpenAI–Hugging Face incident](#a3--institutional-consequence-of-the-openaihugging-face-incident)
+  - [A.4 — How to use this appendix](#a4--how-to-use-this-appendix)
+<!-- toc:end -->
 # Closed-Loop Security of VLM, VLA, and World-Action Models: An Evidence-Based Review
 
 ## Abstract
@@ -41,7 +65,7 @@ Reproducible query four (embodied system security) is: all:"embodied AI" AND (al
 
 The screening ledger contains 382 normalized records. We excluded 280 at the bibliographic-record or abstract stage. We sought full text for 102 and did not obtain 2. We assessed 100 in full text and excluded 3 at that stage. Finally, 97 entered qualitative synthesis and 81 entered quantitative extraction. The original queries, screening reasons, PDFs, text extractions, paper cards, hashes and version status are all retained in the project assets.
 
-![Search, screening, and inclusion flow; counts come from the frozen machine-readable screening records.](figures/review-flow.pdf)
+![Search, screening, and inclusion flow; counts come from the frozen machine-readable screening records.](../figures/review-flow.png)
 
 *Search, screening, and inclusion flow; counts come from the frozen machine-readable screening records.*
 
@@ -57,7 +81,7 @@ Evidence-permission rules precede writing. Only locatable primary full texts sup
 
 Screening and coding used model assistance plus independent review, but the existing records are insufficient to claim compliance with the dual-reviewer, full-process norms of a specific medical-style systematic review. The primary type of this survey is therefore an evidence-tiered classification review with systematic search, scoping mapping, descriptive quantitative and static reproduction submodules. It is not a systematic review, a unified benchmark or a meta-analysis.
 
-![Distribution of evidence layers, years, and targets of the included studies; the denominator is the 97 qualitatively included papers.](figures/evidence-landscape.pdf)
+![Distribution of evidence layers, years, and targets of the included studies; the denominator is the 97 qualitatively included papers.](../figures/evidence-landscape.png)
 
 *Distribution of evidence layers, years, and targets of the included studies; the denominator is the 97 qualitatively included papers.*
 
@@ -97,7 +121,7 @@ $$
 
 Ultimately, the system also includes action denormalization, trajectory interpolation, collision checking, message queues, low-level controllers, actuators and feedback. Model outputs are only proposals. A real side effect holds only after the proposal passes the authorization gate, is executed by the controller, and the environment state changes. [@C003; @C004; @C005; @C007]
 
-![The end-to-end system contract from VLM semantics and VLA action authorization to WAM imagination—action coupling and real execution.](figures/v2/fig01-system-chain.pdf)
+![The end-to-end system contract from VLM semantics and VLA action authorization to WAM imagination—action coupling and real execution.](../figures/fig01-system-chain.png)
 
 *The end-to-end system contract from VLM semantics and VLA action authorization to WAM imagination—action coupling and real execution.*
 
@@ -125,7 +149,7 @@ This chapter thus outputs the end-to-end input—state—action—execution—fe
 
 The main axis answers only one question. Which system contract does the attack objective break first? The break must also be direct. The six interfaces are, in order, training data and model artifacts, observation and environment instructions, cross-modal semantics and reasoning, world state and imagination rollout, policy and action decoding, and execution feedback and information assets. The optimization variable decides the classification, not the attack carrier and not a paper's self-description.
 
-![Six-interface attack taxonomy: the primary class is decided by the contract that is broken first, while propagation endpoints and privileges serve only as secondary labels.](figures/v2/fig02-attack-taxonomy.pdf)
+![Six-interface attack taxonomy: the primary class is decided by the contract that is broken first, while propagation endpoints and privileges serve only as secondary labels.](../figures/fig02-attack-taxonomy.png)
 
 *Six-interface attack taxonomy: the primary class is decided by the contract that is broken first, while propagation endpoints and privileges serve only as secondary labels.*
 
@@ -385,7 +409,7 @@ Synthesis boundary. A047/A050 directly support the existence of VLA training-mem
 
 Defense is not another list of method names. It severs the risk chain in reverse, along the same six-interface coordinates. The input layer reduces attack reachability. The state layer detects or repairs anomalies. The policy layer revokes dangerous authorization. The execution layer limits physical consequences. The recovery layer enters a bounded state after earlier failures and preserves forensics. Each layer must state its independent signals, frequency, thresholds, clean cost and adaptive state.
 
-![Defense in depth mirrored to the attack chain: prevention, detection, suppression, recovery, and assurance change different positions in the risk chain.](figures/v2/fig03-defense-mirror.pdf)
+![Defense in depth mirrored to the attack chain: prevention, detection, suppression, recovery, and assurance change different positions in the risk chain.](../figures/fig03-defense-mirror.png)
 
 *Defense in depth mirrored to the attack chain: prevention, detection, suppression, recovery, and assurance change different positions in the risk chain.*
 
@@ -573,7 +597,7 @@ High-frequency action chunk or flow-matching policies cannot call a large extern
 
 WAM candidate planning requires three-way verification among imagination, action, and feedback. The forward model states what kind of future an action will produce. Inverse dynamics states whether that future can be reached by the chosen action. The real next observation determines whether to continue. If the three judgments share the same encoder and latent state, they only form self-consistency, not independent guarantees. High-impact actions require at least heterogeneous sensing or physical constraints. [@A029; @A033; @A036; @A058]
 
-![WAM imagination–action–feedback three-way integrity. Self-checks that share the same contaminated state do not constitute independent safety evidence.](figures/v2/fig04-wam-integrity.pdf)
+![WAM imagination–action–feedback three-way integrity. Self-checks that share the same contaminated state do not constitute independent safety evidence.](../figures/fig04-wam-integrity.png)
 
 *WAM imagination–action–feedback three-way integrity. Self-checks that share the same contaminated state do not constitute independent safety evidence.*
 
@@ -585,7 +609,7 @@ This chapter therefore outputs a conditionalized combination, not a ranking of h
 
 Safety metrics break along the risk chain. The content violation rate measures the answer. Representational distance measures the internal state. Target action hits measure the policy output. Task failure measures the closed-loop result, while trajectory deviation and constraint violation measure the process. Recovery time measures system resilience, and real side effects still require environmental events. Numbers that share the name ASR may sit at completely different endpoints.
 
-![Safety metric discontinuities: answer, state, intent, action authorization, closed-loop events, and real side effects cannot substitute for one another.](figures/v2/fig05-metric-chain.pdf)
+![Safety metric discontinuities: answer, state, intent, action authorization, closed-loop events, and real side effects cannot substitute for one another.](../figures/fig05-metric-chain.png)
 
 *Safety metric discontinuities: answer, state, intent, action authorization, closed-loop events, and real side effects cannot substitute for one another.*
 
@@ -597,7 +621,7 @@ The formal random-effects pipeline requires at least 3 independent study cluster
 
 Each of the three strict attack-effect correlations was planned to test one relationship with the decline in task success: year, degree of realism, and closed-loop length. Each prespecified at least 12 independent clusters. After policy screening the valid clusters were 0 or 1, so all 3/​3 were rejected. Loosening the threshold cannot be used to manufacture conclusions about architecture, year, or physicality and attack effects.
 
-![Threshold status of the meta-analysis and correlation analyses. A rejected computation means non-comparability or insufficient independent clusters, not zero risk.](figures/statistical-status.pdf)
+![Threshold status of the meta-analysis and correlation analyses. A rejected computation means non-comparability or insufficient independent clusters, not zero risk.](../figures/statistical-status.png)
 
 *Threshold status of the meta-analysis and correlation analyses. A rejected computation means non-comparability or insufficient independent clusters, not zero risk.*
 
@@ -615,7 +639,7 @@ The strongest quantitative conclusion of this chapter is not which attack is str
 
 The reproduction audit answers only what can be statically confirmed in the repositories. It must not turn file existence, passing syntax, or a locatable loss function into the claim that the paper's numbers have been reproduced. This project did not download model weights, did not call any API, and did not run any simulator or robot. The end-to-end run count for the four repositories is 0.
 
-![Reproduction status boundary: source-code localization and static contract verification are not equivalent to end-to-end runs of dependencies, weights, simulators, or real machines.](figures/v2/fig06-reproduction-boundary.pdf)
+![Reproduction status boundary: source-code localization and static contract verification are not equivalent to end-to-end runs of dependencies, weights, simulators, or real machines.](../figures/fig06-reproduction-boundary.png)
 
 *Reproduction status boundary: source-code localization and static contract verification are not equivalent to end-to-end runs of dependencies, weights, simulators, or real machines.*
 
